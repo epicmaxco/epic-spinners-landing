@@ -1,13 +1,21 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <loaders-header></loaders-header>
     <router-view/>
+    <loaders-footer></loaders-footer>
   </div>
 </template>
 
+
 <script>
+import LoadersHeader from '@/components/LoadersHeader'
+import LoadersFooter from '@/components/LoadersFooter'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    LoadersHeader,
+    LoadersFooter
+  }
 }
 </script>
 
@@ -18,6 +26,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
