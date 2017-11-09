@@ -1,7 +1,9 @@
 <template>
   <div class="loaders-gallery">
     <div class="gallery-item-container">
-      <loaders-gallery-item></loaders-gallery-item>
+      <loaders-gallery-item>
+        <hollow-dots-spinner></hollow-dots-spinner>
+      </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item></loaders-gallery-item>
@@ -65,11 +67,13 @@
 
 <script>
   import LoadersGalleryItem from './LoadersGalleryItem.vue'
+  import HollowDotsSpinner from './spinners/HollowDotsSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
     components: {
-      LoadersGalleryItem
+      LoadersGalleryItem,
+      HollowDotsSpinner
     }
   }
 </script>
