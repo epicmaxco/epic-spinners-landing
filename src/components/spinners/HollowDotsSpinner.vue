@@ -12,12 +12,12 @@
 
     props: {
       animationDuration: {
-        type: String,
-        default: '1000ms'
+        type: Number,
+        default: 1000
       },
       dotSize: {
-        type: String,
-        default: '15px'
+        type: Number,
+        default: 15
       },
       color: {
         type: String,
@@ -28,10 +28,10 @@
     data () {
       return {
         dotStyle: {
-          animationDuration: this.animationDuration,
-          width: this.dotSize,
-          height: this.dotSize,
-          borderSize: this.dotSize / 5,
+          animationDuration: `${this.animationDuration}ms`,
+          width: `${this.dotSize}px`,
+          height: `${this.dotSize}px`,
+          borderSize: `${this.dotSize / 5}px`,
           borderColor: this.color
         }
       }
