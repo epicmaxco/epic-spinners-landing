@@ -6,7 +6,9 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item></loaders-gallery-item>
+      <loaders-gallery-item>
+        <pixel-spinner :animationDuration="1500" :pixelSize="10" :color="'#ff1d5e'"></pixel-spinner>
+      </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item></loaders-gallery-item>
@@ -68,12 +70,14 @@
 <script>
   import LoadersGalleryItem from './LoadersGalleryItem.vue'
   import HollowDotsSpinner from './spinners/HollowDotsSpinner.vue'
+  import PixelSpinner from './spinners/PixelSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
     components: {
       LoadersGalleryItem,
-      HollowDotsSpinner
+      HollowDotsSpinner,
+      PixelSpinner
     }
   }
 </script>
