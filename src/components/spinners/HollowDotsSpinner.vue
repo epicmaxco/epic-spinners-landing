@@ -1,18 +1,44 @@
 <template>
   <div class="hollow-dots-spinner">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
+    <div class="dot" :style="dotStyle"></div>
+    <div class="dot" :style="dotStyle"></div>
+    <div class="dot" :style="dotStyle"></div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'HollowDotsSpinner'
+    name: 'HollowDotsSpinner',
+
+    props: {
+      animationDuration: {
+        type: String,
+        default: '1000ms'
+      },
+      dotSize: {
+        type: String,
+        default: '15px'
+      },
+      color: {
+        type: String,
+        default: '#fff'
+      }
+    },
+
+    data () {
+      return {
+        dotStyle: {
+          animationDuration: this.animationDuration,
+          width: this.dotSize,
+          height: this.dotSize,
+          borderSize: this.dotSize / 5,
+          borderColor: this.color
+        }
+      }
+    }
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style  lang="scss" scoped>
   $dot-size: 15px;
   $animation-duration: 1000ms;
@@ -20,7 +46,7 @@
   .dot {
     width: $dot-size;
     height: $dot-size;
-    border: ($dot-size / 5) solid #ff1d5e;
+    border: ($dot-size / 5) solid #fff;
     border-radius: 50%;
     float: left;
     margin: 0 ($dot-size / 2);
