@@ -11,7 +11,9 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item></loaders-gallery-item>
+      <loaders-gallery-item>
+        <flower-spinner :animationDuration="1000" :dotSize="10" :color="'#ff1d5e'"></flower-spinner>
+      </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item></loaders-gallery-item>
@@ -71,13 +73,15 @@
   import LoadersGalleryItem from './LoadersGalleryItem.vue'
   import HollowDotsSpinner from './spinners/HollowDotsSpinner.vue'
   import PixelSpinner from './spinners/PixelSpinner.vue'
+  import FlowerSpinner from './spinners/FlowerSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
     components: {
       LoadersGalleryItem,
       HollowDotsSpinner,
-      PixelSpinner
+      PixelSpinner,
+      FlowerSpinner
     }
   }
 </script>
