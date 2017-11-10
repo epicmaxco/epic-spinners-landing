@@ -7,7 +7,7 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <pixel-spinner :animationDuration="1500" :pixelSize="10" :color="'#ff1d5e'"></pixel-spinner>
+        <pixel-spinner :animationDuration="2000" :pixelSize="10" :color="'#ff1d5e'"></pixel-spinner>
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
