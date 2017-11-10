@@ -12,7 +12,7 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <flower-spinner :animationDuration="1000" :dotSize="10" :color="'#ff1d5e'"></flower-spinner>
+        <flower-spinner :animationDuration="2500" :dotSize="10" :color="'#ff1d5e'"></flower-spinner>
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">

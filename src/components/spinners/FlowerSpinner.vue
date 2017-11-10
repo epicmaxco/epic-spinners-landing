@@ -34,13 +34,15 @@
         biggerDotStyle: {
           width: `${this.dotSize}px`,
           height: `${this.dotSize}px`,
-          background: this.color
+          background: this.color,
+          animationDuration: `${this.animationDuration}ms`
         },
 
         smallerDotStyle: {
           width: `${this.dotSize * 0.9}px`,
           height: `${this.dotSize * 0.9}px`,
-          background: this.color
+          background: this.color,
+          animationDuration: `${this.animationDuration}ms`
         },
 
         spinnerStyle: {
