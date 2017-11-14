@@ -36,7 +36,9 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item></loaders-gallery-item>
+      <loaders-gallery-item>
+        <fulfilling-square-spinner :animationDuration="4000" :size="50" :color="'#ff1d5e'"></fulfilling-square-spinner>
+      </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item></loaders-gallery-item>
@@ -86,6 +88,7 @@
   import OrbitSpinner from './spinners/OrbitSpinner.vue'
   import PolarSpinner from './spinners/PolarSpinner.vue'
   import TrinityRingsSpinner from './spinners/TrinityRingsSpinner.vue'
+  import FulfillingSquareSpinner from './spinners/FulfillingSquareSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
@@ -97,7 +100,8 @@
       IntersectingCirclesSpinner,
       OrbitSpinner,
       PolarSpinner,
-      TrinityRingsSpinner
+      TrinityRingsSpinner,
+      FulfillingSquareSpinner
     }
   }
 </script>
