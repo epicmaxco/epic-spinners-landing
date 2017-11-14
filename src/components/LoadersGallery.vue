@@ -31,7 +31,9 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item></loaders-gallery-item>
+      <loaders-gallery-item>
+        <trinity-rings-spinner :animationDuration="1500" :size="60" :color="'#ff1d5e'"></trinity-rings-spinner>
+      </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item></loaders-gallery-item>
@@ -83,6 +85,7 @@
   import IntersectingCirclesSpinner from './spinners/IntersectingCirclesSpinner.vue'
   import OrbitSpinner from './spinners/OrbitSpinner.vue'
   import PolarSpinner from './spinners/PolarSpinner.vue'
+  import TrinityRingsSpinner from './spinners/TrinityRingsSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
@@ -93,7 +96,8 @@
       FlowerSpinner,
       IntersectingCirclesSpinner,
       OrbitSpinner,
-      PolarSpinner
+      PolarSpinner,
+      TrinityRingsSpinner
     }
   }
 </script>
