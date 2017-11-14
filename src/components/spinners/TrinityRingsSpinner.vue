@@ -66,29 +66,45 @@
     position:absolute;
     display:block;
     border-radius:50%;
-    border: 2px solid #fff;
+    border-style: solid;
+    opacity: 1;
   }
 
   .circle1 {
     animation : trinity-rings-spinner-circle1-animation 1s infinite linear;
+    border-width: 3px;
   }
   .circle2 {
     animation : trinity-rings-spinner-circle2-animation 1s infinite linear;
+    border-width: 2px;
   }
   .circle3 {
     animation:trinity-rings-spinner-circle3-animation 1s infinite linear;
+    border-width: 1px;
   }
 
   @keyframes trinity-rings-spinner-circle1-animation{
-    0% { transform: rotateZ(20deg) rotateY(0deg) }
-    100% { transform: rotateZ(100deg) rotateY(360deg) }
+    0% {
+      transform: rotateZ(20deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateZ(100deg) rotateY(360deg);
+    }
   }
   @keyframes trinity-rings-spinner-circle2-animation{
-    0% { transform: rotateZ(100deg) rotateX(0deg) }
-    100% { transform: rotateZ(0deg) rotateX(360deg) }
+    0% {
+      transform: rotateZ(100deg) rotateX(0deg);
+    }
+    100% {
+      transform: rotateZ(0deg) rotateX(360deg);
+    }
   }
   @keyframes trinity-rings-spinner-circle3-animation{
-    0% { transform: rotateZ(100deg) rotateX(-360deg) }
-    100% { transform: rotateZ(-360deg) rotateX(360deg) }
+    0% {
+      transform: rotateZ(100deg) rotateX(-360deg);
+    }
+    100% {
+      transform: rotateZ(-360deg) rotateX(360deg);
+    }
   }
 </style>
