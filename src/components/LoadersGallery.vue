@@ -16,7 +16,9 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item></loaders-gallery-item>
+      <loaders-gallery-item>
+        <intersecting-circles-spinner :animationDuration="1200" :circleSize="35" :color="'#ff1d5e'"></intersecting-circles-spinner>
+      </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item></loaders-gallery-item>
@@ -74,6 +76,7 @@
   import HollowDotsSpinner from './spinners/HollowDotsSpinner.vue'
   import PixelSpinner from './spinners/PixelSpinner.vue'
   import FlowerSpinner from './spinners/FlowerSpinner.vue'
+  import IntersectingCirclesSpinner from './spinners/IntersectingCirclesSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
@@ -81,7 +84,8 @@
       LoadersGalleryItem,
       HollowDotsSpinner,
       PixelSpinner,
-      FlowerSpinner
+      FlowerSpinner,
+      IntersectingCirclesSpinner
     }
   }
 </script>
