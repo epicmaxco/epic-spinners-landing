@@ -41,7 +41,9 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item></loaders-gallery-item>
+      <loaders-gallery-item>
+        <circles-to-rhombuses-spinner  :animationDuration="1200" :circlesNum="3" :circleSize="15" :color="'#ff1d5e'"></circles-to-rhombuses-spinner>
+      </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item></loaders-gallery-item>
@@ -89,6 +91,7 @@
   import PolarSpinner from './spinners/PolarSpinner.vue'
   import TrinityRingsSpinner from './spinners/TrinityRingsSpinner.vue'
   import FulfillingSquareSpinner from './spinners/FulfillingSquareSpinner.vue'
+  import CirclesToRhombusesSpinner from './spinners/CirclesToRhombusesSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
@@ -101,7 +104,8 @@
       OrbitSpinner,
       PolarSpinner,
       TrinityRingsSpinner,
-      FulfillingSquareSpinner
+      FulfillingSquareSpinner,
+      CirclesToRhombusesSpinner
     }
   }
 </script>
