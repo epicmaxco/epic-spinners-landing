@@ -15,7 +15,7 @@
       },
       size: {
         type: Number,
-        default: 100
+        default: 65
       },
       color: {
         type: String,
@@ -50,7 +50,7 @@
           const computedSize = `${this.size - sizeDecrement * i}px`
           const computedPosition = `${positionIncrement * i}px`
           const style = Object.assign({
-            animationDelay: `${this.animationDuration * delayModifier * i}ms`,
+            animationDelay: `${this.animationDuration * delayModifier * (this.ringsNum - i - 1)}ms`,
             height: computedSize,
             width: computedSize,
             left: computedPosition,
@@ -74,10 +74,9 @@
   .ring {
     border-radius: 50%;
     position: absolute;
-    border-top: 5px solid #FFF;
-    border-bottom: 5px solid transparent;
-    border-left: 5px solid #FFF;
-    border-right: 5px solid transparent;
+    border-style: solid;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
     animation: semipolar-spinner-animation 2s infinite;
   }
 
