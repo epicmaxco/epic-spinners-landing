@@ -47,7 +47,7 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <dots-voyage-spinner :animationDuration="10000" :size="100" :color="'#ff1d5e'"></dots-voyage-spinner>
+
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
@@ -94,7 +94,6 @@
   import TrinityRingsSpinner from './spinners/TrinityRingsSpinner.vue'
   import FulfillingSquareSpinner from './spinners/FulfillingSquareSpinner.vue'
   import CirclesToRhombusesSpinner from './spinners/CirclesToRhombusesSpinner.vue'
-  import DotsVoyageSpinner from './spinners/DotsVoyageSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
@@ -108,8 +107,7 @@
       PolarSpinner,
       TrinityRingsSpinner,
       FulfillingSquareSpinner,
-      CirclesToRhombusesSpinner,
-      DotsVoyageSpinner
+      CirclesToRhombusesSpinner
     }
   }
 </script>
