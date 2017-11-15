@@ -47,7 +47,7 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <semipolar-spinner :animationDuration="2500" :size="100" :ringsNum="4" :color="'#ff1d5e'"></semipolar-spinner>
+        <semipolar-spinner :animationDuration="2500" :size="65" :color="'#ff1d5e'"></semipolar-spinner>
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">

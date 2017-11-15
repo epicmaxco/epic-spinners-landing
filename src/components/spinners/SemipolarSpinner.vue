@@ -17,29 +17,21 @@
         type: Number,
         default: 100
       },
-      ringWidth: {
-        type: Number,
-        default: 5
-      },
       color: {
         type: String,
         default: '#fff'
-      },
-      ringsNum: {
-        type: Number,
-        default: 4
       }
     },
 
     data () {
       return {
+        ringsNum: 5,
         spinnerStyle: {
           height: `${this.size}px`,
           width: `${this.size}px`
         },
         ringStyle: {
           animationDuration: `${this.animationDuration}ms`,
-          borderWidth: `${this.ringWidth}px`,
           borderTopColor: this.color,
           borderLeftColor: this.color
         }
@@ -50,7 +42,8 @@
       ringsStyles () {
         const ringsStyles = []
         const delayModifier = 0.1
-        const positionIncrement = this.ringWidth * 2
+        const ringWidth = this.size * 0.05
+        const positionIncrement = ringWidth * 2
         const sizeDecrement = this.size * 0.2
 
         for (let i = 0; i < this.ringsNum; i++) {
@@ -61,7 +54,8 @@
             height: computedSize,
             width: computedSize,
             left: computedPosition,
-            top: computedPosition
+            top: computedPosition,
+            borderWidth: `${ringWidth}px`
           }, this.ringStyle)
           ringsStyles.push(style)
         }
@@ -89,7 +83,7 @@
 
   @keyframes semipolar-spinner-animation {
     50% {
-      transform: rotate(360deg) scale(0.8);
+      transform: rotate(360deg) scale(0.7);
     }
   }
 </style>
