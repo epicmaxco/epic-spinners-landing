@@ -47,7 +47,7 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-
+        <semipolar-spinner :animationDuration="2500" :size="100" :ringsNum="4" :color="'#ff1d5e'"></semipolar-spinner>
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
@@ -94,6 +94,7 @@
   import TrinityRingsSpinner from './spinners/TrinityRingsSpinner.vue'
   import FulfillingSquareSpinner from './spinners/FulfillingSquareSpinner.vue'
   import CirclesToRhombusesSpinner from './spinners/CirclesToRhombusesSpinner.vue'
+  import SemipolarSpinner from './spinners/SemipolarSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
@@ -107,7 +108,8 @@
       PolarSpinner,
       TrinityRingsSpinner,
       FulfillingSquareSpinner,
-      CirclesToRhombusesSpinner
+      CirclesToRhombusesSpinner,
+      SemipolarSpinner
     }
   }
 </script>
