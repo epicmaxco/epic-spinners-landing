@@ -25,13 +25,16 @@
       }
     },
 
-    data () {
-      return {
-        spinnerStyle: {
+    computed: {
+      spinnerStyle () {
+        return {
           height: `${this.size}px`,
           width: `${this.size}px`
-        },
-        orbitStyle: {
+        }
+      },
+
+      orbitStyle () {
+        return {
           borderColor: this.color,
           animationDuration: `${this.animationDuration}ms`
         }
