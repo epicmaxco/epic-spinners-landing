@@ -18,7 +18,7 @@
         default: 15
       },
       dotsNum: {
-        type: String,
+        type: Number,
         default: 3
       },
       color: {
