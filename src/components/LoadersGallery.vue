@@ -2,52 +2,93 @@
   <div class="loaders-gallery">
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <hollow-dots-spinner :animationDuration="1000" :dotSize="15" :color="'#ff1d5e'"></hollow-dots-spinner>
+        <hollow-dots-spinner
+          :animation-duration="1000"
+          :dot-size="15"
+          :color="'#ff1d5e'"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <pixel-spinner :animationDuration="2000" :pixelSize="10" :color="'#ff1d5e'"></pixel-spinner>
+        <pixel-spinner
+          :animation-duration="2000"
+          :pixel-size="10"
+          :color="'#ff1d5e'"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <flower-spinner :animationDuration="2500" :dotSize="10" :color="'#ff1d5e'"></flower-spinner>
+        <flower-spinner
+          :animation-duration="2500"
+          :dot-size="10"
+          :color="'#ff1d5e'"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <intersecting-circles-spinner :animationDuration="1200" :circleSize="35" :color="'#ff1d5e'"></intersecting-circles-spinner>
+        <intersecting-circles-spinner
+          :animation-duration="1200"
+          :circle-size="35"
+          :color="'#ff1d5e'"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <orbit-spinner :animationDuration="1200" :size="55" :color="'#ff1d5e'"></orbit-spinner>
+        <orbit-spinner
+          :animation-duration="1200"
+          :size="55"
+          :color="'#ff1d5e'"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <polar-spinner :animationDuration="1500" :size="60" :color="'#ff1d5e'"></polar-spinner>
+        <polar-spinner
+          :animation-duration="1500"
+          :size="60"
+          :color="'#ff1d5e'"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <trinity-rings-spinner :animationDuration="1500" :size="60" :color="'#ff1d5e'"></trinity-rings-spinner>
+        <trinity-rings-spinner
+          :animation-duration="1500"
+          :size="60"
+          :color="'#ff1d5e'"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <fulfilling-square-spinner :animationDuration="4000" :size="50" :color="'#ff1d5e'"></fulfilling-square-spinner>
+        <fulfilling-square-spinner
+          :animation-duration="4000"
+          :size="50"
+          :color="'#ff1d5e'"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <circles-to-rhombuses-spinner  :animationDuration="1200" :circlesNum="3" :circleSize="15" :color="'#ff1d5e'"></circles-to-rhombuses-spinner>
+        <circles-to-rhombuses-spinner
+          :animation-duration="1200"
+          :circles-num="3"
+          :circle-size="15"
+          :color="'#ff1d5e'"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <semipolar-spinner :animationDuration="2000" :size="65" :color="'#ff1d5e'"></semipolar-spinner>
+        <semipolar-spinner
+          :animation-duration="2000"
+          :size="65"
+          :color="'#ff1d5e'"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
