@@ -69,7 +69,7 @@
     methods: {
       updateAnimation () {
         this.updateAnimationName()
-        utils.appendKeyframes(this.spinnerStyle.animationName, this.generateKeyframes())
+        utils.appendKeyframes(this.currentAnimationName, this.generateKeyframes())
       },
 
       updateAnimationName () {

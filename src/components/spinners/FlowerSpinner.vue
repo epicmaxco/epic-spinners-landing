@@ -30,25 +30,46 @@
       return {
         smallerDotAnimationBaseName: 'flower-spinner-smaller-dot-animation',
         biggerDotAnimationBaseName: 'flower-spinner-bigger-dot-animation',
+        currentSmallerDotAnimationBaseName: '',
+        currentBiggerDotAnimationBaseName: ''
+      }
+    },
 
-        biggerDotStyle: {
-          width: `${this.dotSize}px`,
-          height: `${this.dotSize}px`,
-          background: this.color,
-          animationDuration: `${this.animationDuration}ms`
-        },
-
-        smallerDotStyle: {
-          width: `${this.dotSize * 0.9}px`,
-          height: `${this.dotSize * 0.9}px`,
-          background: this.color,
-          animationDuration: `${this.animationDuration}ms`
-        },
-
-        spinnerStyle: {
+    computed: {
+      spinnerStyle () {
+        return {
           width: `${this.dotSize}px`,
           height: `${this.dotSize}px`
         }
+      },
+
+      smallerDotStyle () {
+        return {
+          width: `${this.dotSize * 0.9}px`,
+          height: `${this.dotSize * 0.9}px`,
+          background: this.color,
+          animationDuration: `${this.animationDuration}ms`,
+          animationName: this.currentSmallerDotAnimationBaseName
+        }
+      },
+
+      biggerDotStyle () {
+        return {
+          width: `${this.dotSize}px`,
+          height: `${this.dotSize}px`,
+          background: this.color,
+          animationDuration: `${this.animationDuration}ms`,
+          animationName: this.currentBiggerDotAnimationBaseName
+        }
+      }
+    },
+
+    watch: {
+      '$props': {
+        handler () {
+          this.updateAnimation()
+        },
+        deep: true
       }
     },
 
@@ -59,13 +80,13 @@
     methods: {
       updateAnimation () {
         this.updateAnimationName()
-        utils.appendKeyframes(this.smallerDotStyle.animationName, this.generateSmallerDotKeyframes())
-        utils.appendKeyframes(this.biggerDotStyle.animationName, this.generateBiggerDotKeyframes())
+        utils.appendKeyframes(this.currentSmallerDotAnimationBaseName, this.generateSmallerDotKeyframes())
+        utils.appendKeyframes(this.currentBiggerDotAnimationBaseName, this.generateBiggerDotKeyframes())
       },
 
       updateAnimationName () {
-        this.$set(this.smallerDotStyle, 'animationName', `${this.smallerDotAnimationBaseName}-${Date.now()}`)
-        this.$set(this.biggerDotStyle, 'animationName', `${this.biggerDotAnimationBaseName}-${Date.now()}`)
+        this.currentSmallerDotAnimationBaseName = `${this.smallerDotAnimationBaseName}-${Date.now()}`
+        this.currentBiggerDotAnimationBaseName = `${this.biggerDotAnimationBaseName}-${Date.now()}`
       },
 
       generateSmallerDotKeyframes () {
