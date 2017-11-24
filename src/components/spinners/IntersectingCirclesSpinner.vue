@@ -25,20 +25,21 @@
       }
     },
 
-    data () {
-      return {
-        spinnerStyle: {
+    computed: {
+      spinnerStyle () {
+        return {
           animationDuration: `${this.animationDuration}ms`,
           width: `${this.circleSize}px`,
           height: `${this.circleSize}px`
-        },
-        circleStyle: {
+        }
+      },
+
+      circleStyle () {
+        return {
           borderColor: this.color
         }
-      }
-    },
+      },
 
-    computed: {
       circleStyles () {
         const circlesPositions = [
           {top: 0, left: 0},
