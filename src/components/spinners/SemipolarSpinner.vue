@@ -1,6 +1,6 @@
 <template>
   <div class="semipolar-spinner" :style="spinnerStyle">
-    <div class="ring" v-for="rs in ringsStyles" :style="rs"></div>
+    <div class="ring" v-for="(rs, index) in ringsStyles" :style="rs" :key="index"></div>
   </div>
 </template>
 

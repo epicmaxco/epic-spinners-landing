@@ -1,7 +1,7 @@
 <template>
   <div class="intersecting-circles-spinner">
     <div class="spinnerBlock" :style="spinnerStyle">
-      <span v-for="cs in circleStyles" :style="cs"></span>
+      <span v-for="(cs, index) in circleStyles" :style="cs" :key="index"></span>
     </div>
   </div>
 </template>

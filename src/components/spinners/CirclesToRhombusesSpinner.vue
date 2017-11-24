@@ -1,6 +1,6 @@
 <template>
   <div class="circles-to-rhombuses-spinner">
-    <div class="circle" v-for="cs in circlesStyles" :style="cs"></div>
+    <div class="circle" v-for="(cs, index) in circlesStyles" :style="cs" :key="index"></div>
   </div>
 </template>
 
