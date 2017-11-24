@@ -1,8 +1,6 @@
 <template>
   <div class="hollow-dots-spinner">
-    <div class="dot" :style="dotStyle"></div>
-    <div class="dot" :style="dotStyle"></div>
-    <div class="dot" :style="dotStyle"></div>
+    <div class="dot" v-for="(ds, index) in dotsStyles" :style="ds" :key="index"></div>
   </div>
 </template>
 
@@ -18,6 +16,10 @@
       dotSize: {
         type: Number,
         default: 15
+      },
+      dotsNum: {
+        type: String,
+        default: 3
       },
       color: {
         type: String,
@@ -35,6 +37,24 @@
           borderColor: this.color
         }
       }
+    },
+
+    computed: {
+      dotsStyles () {
+        const dotsStyles = []
+        const delayModifier = 0.3
+        const basicDelay = 1000
+
+        for (let i = 1; i <= this.dotsNum; i++) {
+          const style = Object.assign({
+            animationDelay: `${basicDelay * i * delayModifier}ms`
+          }, this.dotStyle)
+
+          dotsStyles.push(style)
+        }
+
+        return dotsStyles
+      }
     }
   }
 </script>
@@ -51,17 +71,10 @@
     float: left;
     margin: 0 ($dot-size / 2);
     transform: scale(0);
-    animation: fx $animation-duration ease infinite 0ms;
-
-    &:nth-child(2) {
-      animation: fx $animation-duration ease infinite 1000ms * 0.3;
-    }
-    &:nth-child(3) {
-      animation: fx $animation-duration ease infinite 1000ms * 0.6;
-    }
+    animation: hollow-dots-spinner-animation $animation-duration ease infinite 0ms;
   }
 
-  @keyframes fx {
+  @keyframes hollow-dots-spinner-animation {
     50% {
       transform: scale(1);
       opacity: 1;
