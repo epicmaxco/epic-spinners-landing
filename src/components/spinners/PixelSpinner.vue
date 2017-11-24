@@ -25,7 +25,7 @@
 
     data () {
       return {
-        animationBaseName: 'pixel-animation',
+        animationBaseName: 'pixel-spinner-animation',
         spinnerStyle: {
           animationDuration: `${this.animationDuration}ms`,
           width: `${this.pixelSize}px`,
@@ -102,8 +102,6 @@
   .pixel-spinner {
     width: 10px;
     height: 10px;
-    background: #ff1d5e;
-    color: #ff1d5e;
     box-shadow: 15px 15px  0 0,
     -15px -15px  0 0,
     15px -15px  0 0,
@@ -112,6 +110,6 @@
     15px 0  0 0,
     -15px 0  0 0,
     0 -15px 0 0;
-    animation: pixel-animation 1500ms linear infinite;
+    animation: pixel-spinner-animation 1500ms linear infinite;
   }
 </style>
