@@ -23,14 +23,17 @@
       }
     },
 
-    data () {
-      return {
-        spinnerStyle: {
+    computed: {
+      spinnerStyle () {
+        return {
           height: `${this.size}px`,
           width: `${this.size}px`,
           borderColor: this.color
-        },
-        spinnerInnerStyle: {
+        }
+      },
+
+      spinnerInnerStyle () {
+        return {
           backgroundColor: this.color
         }
       }
