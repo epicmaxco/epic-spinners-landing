@@ -25,19 +25,23 @@
 
     data () {
       return {
-        ringsNum: 9,
-        spinnerStyle: {
-          height: `${this.size}px`,
-          width: `${this.size}px`
-        },
-        ringStyle: {
-          borderTopColor: this.color,
-          animationDuration: `${this.animationDuration}ms`
-        }
+        ringsNum: 9
       }
     },
 
     computed: {
+      spinnerStyle () {
+        return {
+          height: `${this.size}px`,
+          width: `${this.size}px`
+        }
+      },
+      ringStyle () {
+        return {
+          borderTopColor: this.color,
+          animationDuration: `${this.animationDuration}ms`
+        }
+      },
       ringsStyles () {
         const ringsStyles = []
         const ringBase = this.size / (this.ringsNum)
