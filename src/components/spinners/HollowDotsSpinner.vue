@@ -27,19 +27,17 @@
       }
     },
 
-    data () {
-      return {
-        dotStyle: {
+    computed: {
+      dotStyle () {
+        return {
           animationDuration: `${this.animationDuration}ms`,
           width: `${this.dotSize}px`,
           height: `${this.dotSize}px`,
           borderSize: `${this.dotSize / 5}px`,
           borderColor: this.color
         }
-      }
-    },
+      },
 
-    computed: {
       dotsStyles () {
         const dotsStyles = []
         const delayModifier = 0.3
