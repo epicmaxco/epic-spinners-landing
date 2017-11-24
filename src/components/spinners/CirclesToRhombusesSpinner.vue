@@ -27,19 +27,17 @@
       }
     },
 
-    data () {
-      return {
-        circleStyle: {
+    computed: {
+      circleStyle () {
+        return {
           borderColor: this.color,
           animationDuration: `${this.animationDuration}ms`,
           height: `${this.circleSize}px`,
           width: `${this.circleSize}px`,
           marginLeft: `${this.circleSize * 1.125}px`
         }
-      }
-    },
+      },
 
-    computed: {
       circlesStyles () {
         const circlesStyles = []
         const delay = 150
