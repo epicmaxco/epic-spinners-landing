@@ -25,25 +25,34 @@
       }
     },
 
-    data () {
-      return {
-        spinnerStyle: {
+    computed: {
+      spinnerStyle () {
+        return {
           height: `${this.size}px`,
           width: `${this.size}px`
-        },
-        ring1Style: {
+        }
+      },
+
+      ring1Style () {
+        return {
           height: `${this.size}px`,
           width: `${this.size}px`,
           borderColor: this.color,
           animationDuration: `${this.animationDuration}ms`
-        },
-        ring2Style: {
+        }
+      },
+
+      ring2Style () {
+        return {
           height: `${this.size * 0.65}px`,
           width: `${this.size * 0.65}px`,
           borderColor: this.color,
           animationDuration: `${this.animationDuration}ms`
-        },
-        ring3Style: {
+        }
+      },
+
+      ring3Style () {
+        return {
           height: `${this.size * 0.1}px`,
           width: `${this.size * 0.1}px`,
           borderColor: this.color,
