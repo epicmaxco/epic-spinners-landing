@@ -25,20 +25,24 @@
 
     data () {
       return {
-        ringsNum: 5,
-        spinnerStyle: {
-          height: `${this.size}px`,
-          width: `${this.size}px`
-        },
-        ringStyle: {
-          animationDuration: `${this.animationDuration}ms`,
-          borderTopColor: this.color,
-          borderLeftColor: this.color
-        }
+        ringsNum: 5
       }
     },
 
     computed: {
+      spinnerStyle () {
+        return {
+          height: `${this.size}px`,
+          width: `${this.size}px`
+        }
+      },
+      ringStyle () {
+        return {
+          animationDuration: `${this.animationDuration}ms`,
+          borderTopColor: this.color,
+          borderLeftColor: this.color
+        }
+      },
       ringsStyles () {
         const ringsStyles = []
         const delayModifier = 0.1

@@ -162,7 +162,7 @@
 
     mounted () {
       setInterval(() => {
-        this.spinnerColor = this.spinnerColor === '#ff1d5e' ? '#ccc' : '#ff1d5e'
+        this.spinnerColor = this.spinnerColor === '#ff1d5e' ? 'green' : '#ff1d5e'
         console.log(this.spinnerColor)
       }, 3000)
     }
