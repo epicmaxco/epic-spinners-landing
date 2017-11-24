@@ -6,7 +6,7 @@
           :animation-duration="1000"
           :dot-size="15"
           :dots-num="3"
-          :color="'#ff1d5e'"
+          :color="spinnerColor"
         />
       </loaders-gallery-item>
     </div>
@@ -15,7 +15,7 @@
         <pixel-spinner
           :animation-duration="2000"
           :pixel-size="10"
-          :color="'#ff1d5e'"
+          :color="spinnerColor"
         />
       </loaders-gallery-item>
     </div>
@@ -24,7 +24,7 @@
         <flower-spinner
           :animation-duration="2500"
           :dot-size="10"
-          :color="'#ff1d5e'"
+          :color="spinnerColor"
         />
       </loaders-gallery-item>
     </div>
@@ -33,7 +33,7 @@
         <intersecting-circles-spinner
           :animation-duration="1200"
           :circle-size="35"
-          :color="'#ff1d5e'"
+          :color="spinnerColor"
         />
       </loaders-gallery-item>
     </div>
@@ -42,7 +42,7 @@
         <orbit-spinner
           :animation-duration="1200"
           :size="55"
-          :color="'#ff1d5e'"
+          :color="spinnerColor"
         />
       </loaders-gallery-item>
     </div>
@@ -51,7 +51,7 @@
         <polar-spinner
           :animation-duration="1500"
           :size="60"
-          :color="'#ff1d5e'"
+          :color="spinnerColor"
         />
       </loaders-gallery-item>
     </div>
@@ -60,7 +60,7 @@
         <trinity-rings-spinner
           :animation-duration="1500"
           :size="60"
-          :color="'#ff1d5e'"
+          :color="spinnerColor"
         />
       </loaders-gallery-item>
     </div>
@@ -69,7 +69,7 @@
         <fulfilling-square-spinner
           :animation-duration="4000"
           :size="50"
-          :color="'#ff1d5e'"
+          :color="spinnerColor"
         />
       </loaders-gallery-item>
     </div>
@@ -79,7 +79,7 @@
           :animation-duration="1200"
           :circles-num="3"
           :circle-size="15"
-          :color="'#ff1d5e'"
+          :color="spinnerColor"
         />
       </loaders-gallery-item>
     </div>
@@ -88,7 +88,7 @@
         <semipolar-spinner
           :animation-duration="2000"
           :size="65"
-          :color="'#ff1d5e'"
+          :color="spinnerColor"
         />
       </loaders-gallery-item>
     </div>
@@ -152,6 +152,19 @@
       FulfillingSquareSpinner,
       CirclesToRhombusesSpinner,
       SemipolarSpinner
+    },
+
+    data () {
+      return {
+        spinnerColor: '#ff1d5e'
+      }
+    },
+
+    mounted () {
+      setInterval(() => {
+        this.spinnerColor = this.spinnerColor === '#ff1d5e' ? '#ccc' : '#ff1d5e'
+        console.log(this.spinnerColor)
+      }, 3000)
     }
   }
 </script>
