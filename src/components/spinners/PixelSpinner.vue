@@ -26,8 +26,15 @@
     data () {
       return {
         animationBaseName: 'pixel-spinner-animation',
-        spinnerStyle: {
+        currentAnimationName: ''
+      }
+    },
+
+    computed: {
+      spinnerStyle () {
+        return {
           animationDuration: `${this.animationDuration}ms`,
+          animationName: this.currentAnimationName,
           width: `${this.pixelSize}px`,
           height: `${this.pixelSize}px`,
           backgroundColor: this.color,
@@ -46,6 +53,15 @@
       }
     },
 
+    watch: {
+      '$props': {
+        handler () {
+          this.updateAnimation()
+        },
+        deep: true
+      }
+    },
+
     mounted () {
       this.updateAnimation()
     },
@@ -57,7 +73,7 @@
       },
 
       updateAnimationName () {
-        this.$set(this.spinnerStyle, 'animationName', `${this.animationBaseName}-${Date.now()}`)
+        this.currentAnimationName = `${this.animationBaseName}-${Date.now()}`
       },
 
       generateKeyframes () {
