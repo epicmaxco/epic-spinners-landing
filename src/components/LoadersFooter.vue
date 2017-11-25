@@ -38,10 +38,7 @@
 @import "../sass/variables";
 
 .loaders-footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin-top: 60px;
   .top-line {
     background-color: $brand-main-color-dark;
     height: $footer-main-height;
