@@ -94,7 +94,9 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <diamond-spinner/>
+        <diamond-spinner
+          :color="spinnerColor"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">

@@ -1,39 +1,39 @@
 <template>
-  <div class="diamond-spinner">
+  <div class="diamond-spinner" :style="spinnerStyle">
     <div class="diamond-spinner-row">
-      <div class="arrow up outer outer-18"></div>
-      <div class="arrow down outer outer-17"></div>
-      <div class="arrow up outer outer-16"></div>
-      <div class="arrow down outer outer-15"></div>
-      <div class="arrow up outer outer-14"></div>
+      <div class="arrow up outer outer-18" :style="outerArrowsStyles[18]"></div>
+      <div class="arrow down outer outer-17" :style="outerArrowsStyles[17]"></div>
+      <div class="arrow up outer outer-16" :style="outerArrowsStyles[16]"></div>
+      <div class="arrow down outer outer-15" :style="outerArrowsStyles[15]"></div>
+      <div class="arrow up outer outer-14" :style="outerArrowsStyles[14]"></div>
     </div>
 
     <div class="diamond-spinner-row">
-      <div class="arrow up outer outer-1"></div>
-      <div class="arrow down outer outer-2"></div>
-      <div class="arrow up inner inner-6"></div>
-      <div class="arrow down inner inner-5"></div>
-      <div class="arrow up inner inner-4"></div>
-      <div class="arrow down outer outer-13"></div>
-      <div class="arrow up outer outer-12"></div>
+      <div class="arrow up outer outer-1" :style="outerArrowsStyles[1]"></div>
+      <div class="arrow down outer outer-2" :style="outerArrowsStyles[2]"></div>
+      <div class="arrow up inner inner-6" :style="innerArrowsStyles[6]"></div>
+      <div class="arrow down inner inner-5" :style="innerArrowsStyles[5]"></div>
+      <div class="arrow up inner inner-4" :style="innerArrowsStyles[4]"></div>
+      <div class="arrow down outer outer-13" :style="outerArrowsStyles[13]"></div>
+      <div class="arrow up outer outer-12" :style="outerArrowsStyles[12]"></div>
     </div>
 
     <div class="diamond-spinner-row">
-      <div class="arrow down outer outer-3"></div>
-      <div class="arrow up outer outer-4"></div>
-      <div class="arrow down inner inner-1"></div>
-      <div class="arrow up inner inner-2"></div>
-      <div class="arrow down inner inner-3"></div>
-      <div class="arrow up outer outer-11"></div>
-      <div class="arrow down outer outer-10"></div>
+      <div class="arrow down outer outer-3" :style="outerArrowsStyles[3]"></div>
+      <div class="arrow up outer outer-4" :style="outerArrowsStyles[4]"></div>
+      <div class="arrow down inner inner-1" :style="innerArrowsStyles[1]"></div>
+      <div class="arrow up inner inner-2" :style="innerArrowsStyles[2]"></div>
+      <div class="arrow down inner inner-3" :style="innerArrowsStyles[3]"></div>
+      <div class="arrow up outer outer-11" :style="outerArrowsStyles[11]"></div>
+      <div class="arrow down outer outer-10" :style="outerArrowsStyles[10]"></div>
     </div>
 
     <div class="diamond-spinner-row">
-      <div class="arrow down outer outer-5"></div>
-      <div class="arrow up outer outer-6"></div>
-      <div class="arrow down outer outer-7"></div>
-      <div class="arrow up outer outer-8"></div>
-      <div class="arrow down outer outer-9"></div>
+      <div class="arrow down outer outer-5" :style="outerArrowsStyles[5]"></div>
+      <div class="arrow up outer outer-6" :style="outerArrowsStyles[6]"></div>
+      <div class="arrow down outer outer-7" :style="outerArrowsStyles[7]"></div>
+      <div class="arrow up outer outer-8" :style="outerArrowsStyles[8]"></div>
+      <div class="arrow down outer outer-9" :style="outerArrowsStyles[9]"></div>
     </div>
   </div>
 </template>
@@ -45,46 +45,67 @@
     props: {
       animationDuration: {
         type: Number,
-        default: 1200
+        default: 1000
       },
-      circleSize: {
+      size: {
         type: Number,
-        default: 15
+        default: 86
       },
       color: {
         type: String,
         default: '#fff'
-      },
-      circlesNum: {
-        type: Number,
-        default: 3
+      }
+    },
+
+    data () {
+      return {
+        outerArrowsNum: 18,
+        innerArrowsNum: 6
       }
     },
 
     computed: {
-      circleStyle () {
+      spinnerStyle () {
         return {
-          borderColor: this.color,
-          animationDuration: `${this.animationDuration}ms`,
-          height: `${this.circleSize}px`,
-          width: `${this.circleSize}px`,
-          marginLeft: `${this.circleSize * 1.125}px`
+          height: `${this.size}px`,
+          width: `${this.size}px`
+        }
+      },
+      arrowStyle () {
+        const arrowSizeModifier = 7.1666
+        const arrowSize = this.size / arrowSizeModifier
+
+        return {
+          margin: `0 ${-arrowSize / 2}px`,
+          borderLeft: `${arrowSize}px solid transparent`,
+          borderRight: `${arrowSize}px solid transparent`,
+          borderBottom: `${arrowSize * 1.8}px solid ${this.color}`,
+          animationDuration: `${this.animationDuration}ms`
         }
       },
 
-      circlesStyles () {
-        const circlesStyles = []
-        const delay = 150
+      outerArrowsStyles () {
+        const outerStyles = {}
 
-        for (let i = 1; i <= this.circlesNum; i++) {
-          const style = Object.assign({
-            animationDelay: `${i * delay}ms`
-          }, this.circleStyle)
-
-          circlesStyles.push(style)
+        for (let i = 1; i <= this.outerArrowsNum; i++) {
+          outerStyles[i] = Object.assign({
+            animationDelay: `${-this.animationDuration / this.outerArrowsNum * i}ms`
+          }, this.arrowStyle)
         }
 
-        return circlesStyles
+        return outerStyles
+      },
+
+      innerArrowsStyles () {
+        const innerStyles = {}
+
+        for (let i = 1; i <= this.innerArrowsNum; i++) {
+          innerStyles[i] = Object.assign({
+            animationDelay: `${-this.animationDuration / this.innerArrowsNum * i}ms`
+          }, this.arrowStyle)
+        }
+
+        return innerStyles
       }
     }
   }
@@ -108,31 +129,14 @@
   .arrow {
     width: 0;
     height: 0;
-    margin: 0 (-$size / 2);
-    border-left: $size solid transparent;
-    border-right: $size solid transparent;
-    border-bottom: ($size * 1.8) solid $color;
-    animation: blink $time + s infinite;
-    filter: drop-shadow(0 0 ($size * 1.5) $color);
+    animation: diamond-spinner-animation $time + s infinite;
 
     &.down {
       transform: rotate(180deg);
     }
-
-    @for $i from 1 through 18 {
-      &.outer-#{$i} {
-        animation-delay: -($time / 18) * $i + s;
-      }
-    }
-
-    @for $i from 1 through 6 {
-      &.inner-#{$i} {
-        animation-delay: -($time / 6) * $i + s;
-      }
-    }
   }
 
-  @keyframes blink {
+  @keyframes diamond-spinner-animation {
     0% { opacity: 0.1; }
     30% { opacity: 1; }
     100% { opacity: 0.1; }
