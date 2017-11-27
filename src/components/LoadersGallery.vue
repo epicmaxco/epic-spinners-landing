@@ -120,7 +120,13 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item></loaders-gallery-item>
+      <loaders-gallery-item>
+        <rotating-squares-spinner
+          :animation-duration="1250"
+          :size="50"
+          :color="spinnerColor"
+        />
+      </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item></loaders-gallery-item>
@@ -158,6 +164,7 @@
   import DiamondSpinner from './spinners/DiamondSpinner.vue'
   import BreedingRhombusSpinner from './spinners/BreedingRhombusSpinner.vue'
   import SwappingSquaresSpinner from './spinners/SwappingSquaresSpinner.vue'
+  import RotatingSquaresSpinner from './spinners/RotatingSquaresSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
@@ -175,7 +182,8 @@
       SemipolarSpinner,
       DiamondSpinner,
       BreedingRhombusSpinner,
-      SwappingSquaresSpinner
+      SwappingSquaresSpinner,
+      RotatingSquaresSpinner
     },
 
     data () {
