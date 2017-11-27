@@ -1,9 +1,11 @@
 <template>
-  <div class="swapping-squares-spinner">
-      <div class="square one"></div>
-      <div class="square two"></div>
-      <div class="square three"></div>
-      <div class="square four"></div>
+  <div class="swapping-squares-spinner" :style="spinnerStyle">
+      <div class="square"
+           v-for="(ss, index) in squaresStyles"
+           :key="index"
+           :class="`square-${index + 1}`"
+           :style="ss">
+      </div>
   </div>
 </template>
 
@@ -14,11 +16,11 @@
     props: {
       animationDuration: {
         type: Number,
-        default: 2000
+        default: 1000
       },
       size: {
         type: Number,
-        default: 150
+        default: 50
       },
       color: {
         type: String,
@@ -29,7 +31,7 @@
     data () {
       return {
         animationBaseName: 'breeding-rhombus-spinner-animation-child',
-        rhombusesNum: 8
+        squaresNum: 4
       }
     },
 
@@ -41,79 +43,50 @@
         }
       },
 
-      rhombusStyle () {
+      squareStyle () {
         return {
-          height: `${this.size / 7.5}px`,
-          width: `${this.size / 7.5}px`,
+          height: `${this.size * 0.25}px`,
+          width: `${this.size * 0.25}px`,
           animationDuration: `${this.animationDuration}ms`,
-          top: `${this.size / 2.3077}px`,
-          left: `${this.size / 2.3077}px`,
-          backgroundColor: this.color
+          top: `${this.size * 0.37}px`,
+          left: `${this.size * 0.37}px`,
+          borderWidth: `${this.size * 0.04}px`,
+          borderColor: this.color
         }
       },
 
-      rhombusesStyles () {
-        const rhombusesStyles = []
-        const delayModifier = this.animationDuration * 0.05
+      squaresStyles () {
+        const squaresStyles = []
+        const delay = this.animationDuration * 0.5
 
-        for (let i = 1; i <= this.rhombusesNum; i++) {
-          rhombusesStyles.push(Object.assign({
-            animationDelay: `${delayModifier * (i + 1)}ms`
-          }, this.rhombusStyle))
+        for (let i = 1; i <= this.squaresNum; i++) {
+          squaresStyles.push(Object.assign({
+            animationDelay: `${i % 2 === 0 ? delay : 0}ms`
+          }, this.squareStyle))
         }
 
-        return rhombusesStyles
-      },
-
-      bigRhombusStyle () {
-        return {
-          height: `${this.size / 3}px`,
-          width: `${this.size / 3}px`,
-          animationDuration: `${this.animationDuration}`,
-          top: `${this.size / 3}px`,
-          left: `${this.size / 3}px`,
-          backgroundColor: this.color
-        }
+        return squaresStyles
       }
     }
-
   }
 </script>
 
 <style  lang="scss" scoped>
   .swapping-squares-spinner {
     position: relative;
-    height: 100px;
-    width: 100px;
   }
 
   .square {
-    width: 25px;
-    height: 25px;
-    background-color: rgba(255,255,255,0);
     margin-right: auto;
     margin-left: auto;
-    border: 4px solid rgba(239,74,74,1);
-    left: 37px;
-    top: 37px;
+    border-style: solid;
     position: absolute;
+    animation-iteration-count: infinite;
 
-    &.one {
-      animation: swapping-squares-animation-child-1 1s infinite;
-      animation-delay: 0.5s;
-    }
-
-    &.two {
-      animation: swapping-squares-animation-child-2 1s infinite;
-    }
-
-    &.three {
-      animation: swapping-squares-animation-child-3 1s infinite;
-      animation-delay: 0.5s;
-    }
-
-    &.four {
-      animation: swapping-squares-animation-child-4 1s infinite;
+    @for $i from 1 through 4 {
+      &.square-#{$i} {
+        animation-name: swapping-squares-animation-child-#{$i};
+      }
     }
   }
 

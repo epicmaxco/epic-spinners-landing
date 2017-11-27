@@ -112,7 +112,11 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <swapping-squares-spinner />
+        <swapping-squares-spinner
+          :animation-duration="1000"
+          :size="50"
+          :color="spinnerColor"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
