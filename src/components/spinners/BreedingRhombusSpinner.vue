@@ -1,14 +1,14 @@
 <template>
-  <div class="breeding-rhombus-spinner">
-    <div class="rhombus one"></div>
-    <div class="rhombus two"></div>
-    <div class="rhombus three"></div>
-    <div class="rhombus four"></div>
-    <div class="rhombus five"></div>
-    <div class="rhombus six"></div>
-    <div class="rhombus seven"></div>
-    <div class="rhombus eight"></div>
-    <div class="rhombus big"></div>
+  <div class="breeding-rhombus-spinner" :style="spinnerStyle">
+    <div class="rhombus one" :style="rhombusStyle"></div>
+    <div class="rhombus two" :style="rhombusStyle"></div>
+    <div class="rhombus three" :style="rhombusStyle"></div>
+    <div class="rhombus four" :style="rhombusStyle"></div>
+    <div class="rhombus five" :style="rhombusStyle"></div>
+    <div class="rhombus six" :style="rhombusStyle"></div>
+    <div class="rhombus seven" :style="rhombusStyle"></div>
+    <div class="rhombus eight" :style="rhombusStyle"></div>
+    <div class="rhombus big" :style="bigRhombusStyle"></div>
   </div>
 </template>
 
@@ -21,11 +21,11 @@
     props: {
       animationDuration: {
         type: Number,
-        default: 1500
+        default: 2000
       },
-      pixelSize: {
+      size: {
         type: Number,
-        default: 10
+        default: 150
       },
       color: {
         type: String,
@@ -35,7 +35,7 @@
 
     data () {
       return {
-        animationBaseName: 'pixel-spinner-animation',
+        animationBaseName: 'breeding-rhombus-spinner-animation-child',
         currentAnimationName: ''
       }
     },
@@ -43,22 +43,28 @@
     computed: {
       spinnerStyle () {
         return {
-          animationDuration: `${this.animationDuration}ms`,
-          animationName: this.currentAnimationName,
-          width: `${this.pixelSize}px`,
-          height: `${this.pixelSize}px`,
-          backgroundColor: this.color,
-          color: this.color,
-          boxShadow: `
-                        ${this.pixelSize * 1.5}px ${this.pixelSize * 1.5}px 0 0,
-                        ${this.pixelSize * -1.5}px ${this.pixelSize * -1.5}px 0 0,
-                        ${this.pixelSize * 1.5}px ${this.pixelSize * -1.5}px 0 0,
-                        ${this.pixelSize * -1.5}px ${this.pixelSize * 1.5}px 0 0,
-                        0 ${this.pixelSize * 1.5}px 0 0,
-                        ${this.pixelSize * 1.5}px 0 0 0,
-                        ${this.pixelSize * -1.5}px 0 0 0,
-                        0 ${this.pixelSize * -1.5}px 0 0
-                      `
+          height: `${this.size}px`,
+          width: `${this.size}px`
+        }
+      },
+      rhombusStyle () {
+        return {
+          height: `${this.size / 7.5}px`,
+          width: `${this.size / 7.5}px`,
+          animationDuration: `${this.animationDuration}`,
+          top: `${this.size / 2.3077}px`,
+          left: `${this.size / 2.3077}px`,
+          backgroundColor: this.color
+        }
+      },
+      bigRhombusStyle () {
+        return {
+          height: `${this.size / 3}px`,
+          width: `${this.size / 3}px`,
+          animationDuration: `${this.animationDuration}`,
+          top: `${this.size / 3}px`,
+          left: `${this.size / 3}px`,
+          backgroundColor: this.color
         }
       }
     },
@@ -127,124 +133,111 @@
 <style  lang="scss" scoped>
   .breeding-rhombus-spinner {
     position: relative;
-    height: 150px;
-    width: 150px;
     transform: rotate(45deg);
   }
 
   .rhombus {
-    width: 20px;
-    height: 20px;
-    border-radius: 0;
-    background-color: #FFF;
     position: absolute;
-    left: 65px;
-    top: 65px;
 
     &:nth-child(2n+0) {
       margin-right: 0;
     }
 
     &.one {
-      animation: breeding-rhombus-spinner-child-1-animation 2s infinite;
+      animation: breeding-rhombus-spinner-animation-child-1 2s infinite;
       animation-delay: 0.2s;
     }
 
     &.two {
-      animation: breeding-rhombus-spinner-child-2-animation 2s infinite;
+      animation: breeding-rhombus-spinner-animation-child-2 2s infinite;
       animation-delay: 0.3s;
     }
 
     &.three {
-      animation: breeding-rhombus-spinner-child-3-animation 2s infinite;
+      animation: breeding-rhombus-spinner-animation-child-3 2s infinite;
       animation-delay: 0.4s;
     }
 
     &.four {
-      animation: breeding-rhombus-spinner-child-4-animation 2s infinite;
+      animation: breeding-rhombus-spinner-animation-child-4 2s infinite;
       animation-delay: 0.5s;
     }
 
     &.five {
-      animation: breeding-rhombus-spinner-child-5-animation 2s infinite;
+      animation: breeding-rhombus-spinner-animation-child-5 2s infinite;
       animation-delay: 0.6s;
     }
 
     &.six {
-      animation: breeding-rhombus-spinner-child-6-animation 2s infinite;
+      animation: breeding-rhombus-spinner-animation-child-6 2s infinite;
       animation-delay: 0.7s;
     }
 
     &.seven {
-      animation: breeding-rhombus-spinner-child-7-animation 2s infinite;
+      animation: breeding-rhombus-spinner-animation-child-7 2s infinite;
       animation-delay: 0.8s;
     }
 
     &.eight {
-      animation: breeding-rhombus-spinner-child-8-animation 2s infinite;
+      animation: breeding-rhombus-spinner-animation-child-8 2s infinite;
       animation-delay: 0.9s;
     }
 
     &.big {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      left: 50px;
-      top: 50px;
-      animation: breeding-rhombus-spinner-child-big-animation 2s infinite;
+      animation: breeding-rhombus-spinner-animation-child-big 2s infinite;
       animation-delay: 0.5s;
     }
   }
 
-  @keyframes breeding-rhombus-spinner-child-1-animation {
+  @keyframes breeding-rhombus-spinner-animation-child-1 {
     50% {
       transform: translate(-65px,-65px);
     }
   }
 
-  @keyframes breeding-rhombus-spinner-child-2-animation {
+  @keyframes breeding-rhombus-spinner-animation-child-2 {
     50% {
       transform: translate(0,-65px);
     }
   }
 
-  @keyframes breeding-rhombus-spinner-child-3-animation {
+  @keyframes breeding-rhombus-spinner-animation-child-3 {
     50% {
       transform: translate(65px,-65px);
     }
   }
 
-  @keyframes breeding-rhombus-spinner-child-4-animation {
+  @keyframes breeding-rhombus-spinner-animation-child-4 {
     50% {
       transform: translate(65px,0);
     }
   }
 
-  @keyframes breeding-rhombus-spinner-child-5-animation {
+  @keyframes breeding-rhombus-spinner-animation-child-5 {
     50% {
       transform: translate(65px,65px);
     }
   }
 
-  @keyframes breeding-rhombus-spinner-child-6-animation {
+  @keyframes breeding-rhombus-spinner-animation-child-6 {
     50% {
       transform: translate(0,65px);
     }
   }
 
-  @keyframes breeding-rhombus-spinner-child-7-animation {
+  @keyframes breeding-rhombus-spinner-animation-child-7 {
     50% {
       transform: translate(-65px,65px);
     }
   }
 
-  @keyframes breeding-rhombus-spinner-child-8-animation {
+  @keyframes breeding-rhombus-spinner-animation-child-8 {
     50% {
       transform: translate(-65px,0);
     }
   }
 
-  @keyframes breeding-rhombus-spinner-child-big-animation {
+  @keyframes breeding-rhombus-spinner-animation-child-big {
     50% {
       transform: scale(0.5);
     }
