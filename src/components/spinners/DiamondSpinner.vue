@@ -49,7 +49,7 @@
       },
       size: {
         type: Number,
-        default: 86
+        default: 65
       },
       color: {
         type: String,
@@ -72,14 +72,15 @@
         }
       },
       arrowStyle () {
-        const arrowSizeModifier = 7.1666
+        const arrowSizeModifier = 7.19833333
+        const borderBottomModifier = 1.7995
         const arrowSize = this.size / arrowSizeModifier
 
         return {
           margin: `0 ${-arrowSize / 2}px`,
           borderLeft: `${arrowSize}px solid transparent`,
           borderRight: `${arrowSize}px solid transparent`,
-          borderBottom: `${arrowSize * 1.8}px solid ${this.color}`,
+          borderBottom: `${arrowSize * borderBottomModifier}px solid ${this.color}`,
           animationDuration: `${this.animationDuration}ms`
         }
       },
@@ -112,8 +113,6 @@
 </script>
 
 <style  lang="scss" scoped>
-  $color: #fff;
-  $size: 12px;
   $time: 1;
 
   .diamond-spinner {
