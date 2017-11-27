@@ -111,7 +111,9 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item></loaders-gallery-item>
+      <loaders-gallery-item>
+        <swapping-squares-spinner />
+      </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item></loaders-gallery-item>
@@ -151,6 +153,7 @@
   import SemipolarSpinner from './spinners/SemipolarSpinner.vue'
   import DiamondSpinner from './spinners/DiamondSpinner.vue'
   import BreedingRhombusSpinner from './spinners/BreedingRhombusSpinner.vue'
+  import SwappingSquaresSpinner from './spinners/SwappingSquaresSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
@@ -167,20 +170,14 @@
       CirclesToRhombusesSpinner,
       SemipolarSpinner,
       DiamondSpinner,
-      BreedingRhombusSpinner
+      BreedingRhombusSpinner,
+      SwappingSquaresSpinner
     },
 
     data () {
       return {
         spinnerColor: '#ff1d5e'
       }
-    },
-
-    mounted () {
-      setInterval(() => {
-        this.spinnerColor = this.spinnerColor === '#ff1d5e' ? 'green' : '#ff1d5e'
-        console.log(this.spinnerColor)
-      }, 3000)
     }
   }
 </script>
