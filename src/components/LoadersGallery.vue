@@ -121,7 +121,11 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <fulfilling-bouncing-circle-spinner />
+        <fulfilling-bouncing-circle-spinner
+          :animation-duration="4000"
+          :size="60"
+          :color="spinnerColor"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">

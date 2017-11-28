@@ -1,7 +1,7 @@
 <template>
-  <div class="fulfilling-bouncing-circle-spinner">
-    <div class="circle"></div>
-    <div class="orbit"></div>
+  <div class="fulfilling-bouncing-circle-spinner" :style="spinnerStyle">
+    <div class="circle" :style="circleStyle"></div>
+    <div class="orbit" :style="orbitStyle"></div>
   </div>
 </template>
 
@@ -12,11 +12,11 @@
     props: {
       animationDuration: {
         type: Number,
-        default: 1000
+        default: 4000
       },
       size: {
         type: Number,
-        default: 50
+        default: 60
       },
       color: {
         type: String,
@@ -28,13 +28,28 @@
       spinnerStyle () {
         return {
           height: `${this.size}px`,
-          width: `${this.size}px`
+          width: `${this.size}px`,
+          animationDuration: `${this.animationDuration}ms`
         }
       },
 
       orbitStyle () {
         return {
+          height: `${this.size}px`,
+          width: `${this.size}px`,
           borderColor: this.color,
+          borderWidth: `${this.size * 0.03}px`,
+          animationDuration: `${this.animationDuration}ms`
+        }
+      },
+
+      circleStyle () {
+        return {
+          height: `${this.size}px`,
+          width: `${this.size}px`,
+          borderColor: this.color,
+          color: this.color,
+          borderWidth: `${this.size * 0.1}px`,
           animationDuration: `${this.animationDuration}ms`
         }
       }
@@ -44,31 +59,24 @@
 
 <style  lang="scss" scoped>
   .fulfilling-bouncing-circle-spinner {
-    width: 60px;
-    height: 60px;
     position: relative;
     animation: fulfilling-bouncing-circle-spinner-animation infinite 4000ms ease;
   }
 
   .orbit {
     position: absolute;
-    height: 60px;
-    width: 60px;
     top: 0;
     left: 0;
     border-radius: 50%;
-    border: 2px solid #ff1d5e;
+    border: 2px solid #fff;
     animation: fulfilling-bouncing-circle-spinner-orbit-animation infinite 4000ms ease;
   }
 
   .circle {
-    width: 60px;
-    height: 60px;
     display: block;
     border-radius: 50%;
     position: relative;
-    border: 6px solid #ff1d5e;
-    color: #ff1d5e;
+    border: 6px solid #fff;
     animation: fulfilling-bouncing-circle-spinner-circle-animation infinite 4000ms ease;
     transform: rotate(0deg) scale(1);
   }
@@ -88,7 +96,6 @@
       transform: scale(1);
     }
     50% {
-      border-color: #ff1d5e;
       transform: scale(1);
     }
     62.5% {
