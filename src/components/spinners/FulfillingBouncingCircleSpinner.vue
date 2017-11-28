@@ -67,8 +67,8 @@
     display: block;
     border-radius: 50%;
     position: relative;
-    border: 6px solid transparent;
-    border-top-color: #ff1d5e;
+    border: 6px solid #ff1d5e;
+    color: #ff1d5e;
     animation: fulfilling-bouncing-circle-spinner-circle-animation infinite 4000ms ease;
     transform: rotate(0deg) scale(1);
   }
@@ -109,39 +109,39 @@
     0% {
       transform: scale(1);
       border-color: transparent;
-      border-top-color: #ff1d5e;
+      border-top-color: inherit;
     }
     16.7% {
       border-color: transparent;
-      border-top-color: #ff1d5e;
-      border-right-color: #ff1d5e;
+      border-top-color: initial;
+      border-right-color: initial;
     }
     33.4% {
       border-color: transparent;
-      border-top-color: #ff1d5e;
-      border-right-color: #ff1d5e;
-      border-bottom-color: #ff1d5e;
+      border-top-color: inherit;
+      border-right-color: inherit;
+      border-bottom-color: inherit;
     }
     50% {
-      border-color: #ff1d5e;
+      border-color: inherit;
       transform: scale(1);
     }
     62.5% {
-      border-color: #ff1d5e;
+      border-color: inherit;
       transform: scale(1.4);
     }
     75% {
-      border-color: #ff1d5e;
+      border-color: inherit;
       transform: scale(1);
       opacity: 1;
     }
     87.5% {
-      border-color: #ff1d5e;
+      border-color: inherit;
       transform: scale(1.4);
     }
     100% {
       border-color: transparent;
-      border-top-color: #ff1d5e;
+      border-top-color: inherit;
       transform: scale(1);
     }
   }
