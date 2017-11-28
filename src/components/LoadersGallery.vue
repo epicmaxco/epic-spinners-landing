@@ -129,7 +129,9 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item></loaders-gallery-item>
+      <loaders-gallery-item>
+        <fulfilling-bouncing-circle-spinner />
+      </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item></loaders-gallery-item>
@@ -165,6 +167,7 @@
   import BreedingRhombusSpinner from './spinners/BreedingRhombusSpinner.vue'
   import SwappingSquaresSpinner from './spinners/SwappingSquaresSpinner.vue'
   import RotatingSquaresSpinner from './spinners/RotatingSquaresSpinner.vue'
+  import FulfillingBouncingCircleSpinner from './spinners/FulfillingBouncingCircleSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
@@ -183,7 +186,8 @@
       DiamondSpinner,
       BreedingRhombusSpinner,
       SwappingSquaresSpinner,
-      RotatingSquaresSpinner
+      RotatingSquaresSpinner,
+      FulfillingBouncingCircleSpinner
     },
 
     data () {
