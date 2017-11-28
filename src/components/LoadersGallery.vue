@@ -94,15 +94,6 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <diamond-spinner
-          :animation-duration="1000"
-          :size="65"
-          :color="spinnerColor"
-        />
-      </loaders-gallery-item>
-    </div>
-    <div class="gallery-item-container">
-      <loaders-gallery-item>
         <breeding-rhombus-spinner
           :animation-duration="2000"
           :size="65"
@@ -147,6 +138,15 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item></loaders-gallery-item>
+    </div>
+    <div class="gallery-item-container">
+      <loaders-gallery-item>
+        <!--<diamond-spinner-->
+          <!--:animation-duration="1000"-->
+          <!--:size="65"-->
+          <!--:color="spinnerColor"-->
+        <!--/>-->
+      </loaders-gallery-item>
     </div>
   </div>
 </template>
