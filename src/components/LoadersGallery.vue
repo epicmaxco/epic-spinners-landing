@@ -132,7 +132,7 @@
       <loaders-gallery-item>
         <radar-spinner
           :animation-duration="2000"
-          :size="110"
+          :size="60"
           :color="spinnerColor"
         />
       </loaders-gallery-item>
