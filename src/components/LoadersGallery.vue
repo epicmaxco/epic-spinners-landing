@@ -226,7 +226,12 @@
   }
 
   .gallery-item-container {
-    padding: 15px;
+    width: 190px;
+    height: 190px;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 </style>
