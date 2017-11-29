@@ -1,14 +1,12 @@
 <template>
   <div class="self-building-square-spinner" :style="spinnerStyle">
-    <div class="square" :style="squareStyle"></div>
-    <div class="square" :style="squareStyle"></div>
-    <div class="square last" :style="squareStyle"></div>
-    <div class="square clear" :style="squareStyle"></div>
-    <div class="square" :style="squareStyle"></div>
-    <div class="square last" :style="squareStyle"></div>
-    <div class="square clear" :style="squareStyle"></div>
-    <div class="square " :style="squareStyle"></div>
-    <div class="square last" :style="squareStyle"></div>
+    <div class="square"
+         v-for="(ss, index) in squaresStyles"
+         :key="index"
+         :style="ss"
+         :class="{'clear': index && index % 3 === 0}"
+         >
+    </div>
   </div>
 </template>
 
@@ -23,11 +21,17 @@
       },
       squareSize: {
         type: Number,
-        default: 15
+        default: 10
       },
       color: {
         type: String,
         default: '#fff'
+      }
+    },
+
+    data () {
+      return {
+        squaresNum: 9
       }
     },
 
@@ -52,26 +56,26 @@
           animationDuration: `${this.animationDuration}ms`,
           background: this.color
         }
+      },
+
+      squaresStyles () {
+        const squaresStyles = []
+        const delaysMultipliers = [6, 7, 8, 3, 4, 5, 0, 1, 2]
+        const delayModifier = this.animationDuration * 0.05
+
+        for (let i = 0; i < this.squaresNum; i++) {
+          squaresStyles.push(Object.assign({
+            animationDelay: `${delayModifier * delaysMultipliers[i]}ms`
+          }, this.squareStyle))
+        }
+
+        return squaresStyles
       }
     }
   }
 </script>
 
 <style  lang="scss" scoped>
-  $delayenter: 0.3s;
-
-  @mixin transition($value) {
-    -webkit-transition: $value ;
-    -moz-transition: $value ;
-    transition: $value ;
-  }
-
-  @mixin delay( $delay ) {
-    -webkit-animation-delay: $delay;
-    -moz-animation-delay: $delay;
-    animation-delay: $delay;
-  }
-
   @keyframes self-building-square-spinner {
     0% {
       opacity: 0;
@@ -98,40 +102,7 @@
     animation: self-building-square-spinner 6s infinite;
   }
 
-  .enter{
-    top: 0px;
-    opacity: 1;
-  }
-  .square:nth-child(1){
-    @include delay(6 * $delayenter);
-  }
-  .square:nth-child(2){
-    @include delay(7 * $delayenter);
-  }
-  .square:nth-child(3){
-    @include delay(8 * $delayenter);
-  }
-  .square:nth-child(4){
-    @include delay(3 * $delayenter);
-  }
-  .square:nth-child(5){
-    @include delay(4 * $delayenter);
-  }
-  .square:nth-child(6){
-    @include delay(5 * $delayenter);
-  }
-  .square:nth-child(7){
-  }
-  .square:nth-child(8){
-    @include delay(1 * $delayenter);
-  }
-  .square:nth-child(9){
-    @include delay(2 * $delayenter);
-  }
   .clear{
     clear: both;
-  }
-  .last{
-    margin-right:0;
   }
 </style>
