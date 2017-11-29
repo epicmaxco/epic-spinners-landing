@@ -95,8 +95,7 @@
     float: left;
     position:relative;
     opacity: 0;
-    -webkit-animation: enter 6s infinite;
-    animation: enter 6s infinite;
+    animation: self-building-square-spinner 6s infinite;
   }
 
   .enter{
