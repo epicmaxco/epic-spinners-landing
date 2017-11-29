@@ -130,7 +130,11 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <radar-spinner />
+        <radar-spinner
+          :animation-duration="2000"
+          :size="110"
+          :color="spinnerColor"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
