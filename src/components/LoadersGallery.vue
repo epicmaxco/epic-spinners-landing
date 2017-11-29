@@ -138,6 +138,12 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
+      <loaders-gallery-item></loaders-gallery-item>
+    </div>
+    <div class="gallery-item-container">
+      <loaders-gallery-item></loaders-gallery-item>
+    </div>
+    <div class="gallery-item-container">
       <loaders-gallery-item>
         <self-building-square-spinner
           :animation-duration="6000"
@@ -151,18 +157,6 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item></loaders-gallery-item>
-    </div>
-    <div class="gallery-item-container">
-      <loaders-gallery-item></loaders-gallery-item>
-    </div>
-    <div class="gallery-item-container">
-      <loaders-gallery-item>
-        <!--<diamond-spinner-->
-          <!--:animation-duration="1000"-->
-          <!--:size="65"-->
-          <!--:color="spinnerColor"-->
-        <!--/>-->
-      </loaders-gallery-item>
     </div>
   </div>
 </template>
