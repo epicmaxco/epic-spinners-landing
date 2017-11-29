@@ -141,7 +141,9 @@
       <loaders-gallery-item></loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item></loaders-gallery-item>
+      <loaders-gallery-item>
+        <spring-spinner/>
+      </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
@@ -180,6 +182,7 @@
   import FulfillingBouncingCircleSpinner from './spinners/FulfillingBouncingCircleSpinner.vue'
   import RadarSpinner from './spinners/RadarSpinner.vue'
   import SelfBuildingSquareSpinner from './spinners/SelfBuildingSquareSpinner.vue'
+  import SpringSpinner from './spinners/SpringSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
@@ -201,7 +204,8 @@
       RotatingSquaresSpinner,
       FulfillingBouncingCircleSpinner,
       RadarSpinner,
-      SelfBuildingSquareSpinner
+      SelfBuildingSquareSpinner,
+      SpringSpinner
     },
 
     data () {
