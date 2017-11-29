@@ -139,7 +139,11 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <self-building-square-spinner />
+        <self-building-square-spinner
+          :animation-duration="6000"
+          :square-size="10"
+          :color="spinnerColor"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
