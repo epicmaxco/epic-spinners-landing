@@ -1,8 +1,8 @@
 <template>
-  <div class="looping-rhombuses-spinner">
-    <div class="rhombus"></div>
-    <div class="rhombus"></div>
-    <div class="rhombus"></div>
+  <div class="looping-rhombuses-spinner" :style="spinnerStyle">
+    <div class="rhombus" :style="rhombusStyle"></div>
+    <div class="rhombus" :style="rhombusStyle"></div>
+    <div class="rhombus" :style="rhombusStyle"></div>
   </div>
 </template>
 
@@ -13,9 +13,9 @@
     props: {
       animationDuration: {
         type: Number,
-        default: 1200
+        default: 2500
       },
-      circleSize: {
+      rhombusSize: {
         type: Number,
         default: 15
       },
@@ -30,13 +30,19 @@
     },
 
     computed: {
-      circleStyle () {
+      spinnerStyle () {
         return {
-          borderColor: this.color,
+          height: `${this.rhombusSize}px`,
+          width: `${this.rhombusSize * 4}px`
+        }
+      },
+      rhombusStyle () {
+        return {
+          height: `${this.rhombusSize}px`,
+          width: `${this.rhombusSize}px`,
+          backgroundColor: this.color,
           animationDuration: `${this.animationDuration}ms`,
-          height: `${this.circleSize}px`,
-          width: `${this.circleSize}px`,
-          marginLeft: `${this.circleSize * 1.125}px`
+          left: `${this.rhombusSize * 4}px`
         }
       },
 
@@ -59,27 +65,17 @@
 </script>
 
 <style  lang="scss" scoped>
-
-  $accent: #fff;
-  $duration: 2500ms;
-  $timing: linear;
-
   .looping-rhombuses-spinner {
     position: relative;
-    height: 15px; width: 60px;
     .rhombus {
       position: absolute;
-      left: 60px;
       margin: 0 auto;
-      width: 15px;
-      height: 15px;
       border-radius: 2px;
-      background: $accent;
       transform: translateY(0) rotate(45deg) scale(0);
-      animation: looping-rhombuses-spinner-animation $duration $timing infinite;
+      animation: looping-rhombuses-spinner-animation 2500ms linear infinite;
       @for $i from 1 through 4 {
         &:nth-child(#{$i}) {
-          animation-delay: -($duration / 1.5) * $i;
+          animation-delay: -(2500ms / 1.5) * $i;
         }
       }
     }
