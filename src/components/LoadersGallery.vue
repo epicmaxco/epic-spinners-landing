@@ -160,7 +160,11 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <looping-rhombuses-spinner />
+        <looping-rhombuses-spinner
+          :animation-duration="2500"
+          :rhombus-size="15"
+          :color="spinnerColor"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">

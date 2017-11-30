@@ -1,8 +1,10 @@
 <template>
   <div class="looping-rhombuses-spinner" :style="spinnerStyle">
-    <div class="rhombus" :style="rhombusStyle"></div>
-    <div class="rhombus" :style="rhombusStyle"></div>
-    <div class="rhombus" :style="rhombusStyle"></div>
+    <div class="rhombus"
+         v-for="(rs, index) in rhombusesStyles"
+         :ikey="index"
+         :style="rs">
+    </div>
   </div>
 </template>
 
@@ -22,10 +24,12 @@
       color: {
         type: String,
         default: '#fff'
-      },
-      circlesNum: {
-        type: Number,
-        default: 3
+      }
+    },
+
+    data () {
+      return {
+        rhombusesNum: 3
       }
     },
 
@@ -36,6 +40,7 @@
           width: `${this.rhombusSize * 4}px`
         }
       },
+
       rhombusStyle () {
         return {
           height: `${this.rhombusSize}px`,
@@ -46,19 +51,19 @@
         }
       },
 
-      circlesStyles () {
-        const circlesStyles = []
-        const delay = 150
+      rhombusesStyles () {
+        const rhombusesStyles = []
+        const delay = -this.animationDuration / 1.5
 
-        for (let i = 1; i <= this.circlesNum; i++) {
+        for (let i = 1; i <= this.rhombusesNum; i++) {
           const style = Object.assign({
             animationDelay: `${i * delay}ms`
-          }, this.circleStyle)
+          }, this.rhombusStyle)
 
-          circlesStyles.push(style)
+          rhombusesStyles.push(style)
         }
 
-        return circlesStyles
+        return rhombusesStyles
       }
     }
   }
@@ -73,14 +78,12 @@
       border-radius: 2px;
       transform: translateY(0) rotate(45deg) scale(0);
       animation: looping-rhombuses-spinner-animation 2500ms linear infinite;
-      @for $i from 1 through 4 {
-        &:nth-child(#{$i}) {
-          animation-delay: -(2500ms / 1.5) * $i;
-        }
-      }
     }
   }
   @keyframes looping-rhombuses-spinner-animation {
+    0% {
+      transform: translateX(0) rotate(45deg) scale(0);
+    }
     50% {
       transform: translateX(-233%) rotate(45deg) scale(1);
     }
