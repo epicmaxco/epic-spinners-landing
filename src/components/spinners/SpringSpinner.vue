@@ -10,6 +10,8 @@
 </template>
 
 <script>
+  import utils from './utils'
+
   export default {
     name: 'SpringSpinner',
 
@@ -25,6 +27,13 @@
       color: {
         type: String,
         default: '#fff'
+      }
+    },
+
+    data () {
+      return {
+        animationBaseName: 'spring-spinner-animation',
+        currentAnimationName: ''
       }
     },
 
@@ -50,8 +59,53 @@
           borderRightColor: this.color,
           borderTopColor: this.color,
           borderWidth: `${this.size / 7}px`,
-          animationDuration: `${this.animationDuration}ms`
+          animationDuration: `${this.animationDuration}ms`,
+          animationName: this.currentAnimationName
         }
+      }
+    },
+
+    watch: {
+      '$props': {
+        handler () {
+          this.updateAnimation()
+        },
+        deep: true
+      }
+    },
+
+    mounted () {
+      this.updateAnimation()
+    },
+
+    methods: {
+      updateAnimation () {
+        this.updateAnimationName()
+        utils.appendKeyframes(this.currentAnimationName, this.generateKeyframes())
+      },
+
+      updateAnimationName () {
+        this.currentAnimationName = `${this.animationBaseName}-${Date.now()}`
+      },
+
+      generateKeyframes () {
+        return `
+          0% {
+            border-width: ${this.size / 7}px;
+          }
+          25% {
+            border-width: ${this.size / 23.33}px;
+          }
+          50% {
+            transform: rotate(115deg);
+            border-width: ${this.size / 7}px;
+          }
+          75% {
+            border-width: ${this.size / 23.33}px;
+           }
+          100% {
+           border-width: ${this.size / 7}px;
+          }`
       }
     }
   }
@@ -75,16 +129,5 @@
     box-sizing: border-box;
     animation: spring-spinner-animation 3s ease-in-out infinite;
     transform: rotate(-200deg);
-  }
-
-  @keyframes spring-spinner-animation {
-    0% { border-width: 10px; }
-    25% { border-width: 3px; }
-    50% {
-      transform: rotate(115deg);
-      border-width: 10px;
-    }
-    75% { border-width: 3px;}
-    100% { border-width: 10px;}
   }
 </style>
