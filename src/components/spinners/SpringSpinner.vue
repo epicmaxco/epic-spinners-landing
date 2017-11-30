@@ -1,10 +1,10 @@
 <template>
-  <div class="spring-spinner">
-    <div class="spring-spinner-part top">
-      <div class="spring-spinner-rotator"></div>
+  <div class="spring-spinner" :style="spinnerStyle">
+    <div class="spring-spinner-part top" :style="spinnerPartStyle">
+      <div class="spring-spinner-rotator" :style="rotatorStyle"></div>
     </div>
-    <div class="spring-spinner-part bottom">
-      <div class="spring-spinner-rotator"></div>
+    <div class="spring-spinner-part bottom" :style="spinnerPartStyle">
+      <div class="spring-spinner-rotator" :style="rotatorStyle"></div>
     </div>
   </div>
 </template>
@@ -16,11 +16,11 @@
     props: {
       animationDuration: {
         type: Number,
-        default: 6000
+        default: 3000
       },
-      squareSize: {
+      size: {
         type: Number,
-        default: 10
+        default: 70
       },
       color: {
         type: String,
@@ -28,47 +28,30 @@
       }
     },
 
-    data () {
-      return {
-        squaresNum: 9
-      }
-    },
-
     computed: {
-      initialTopPosition () {
-        return -this.squareSize * 2 / 3
-      },
-
       spinnerStyle () {
         return {
-          top: `${-this.initialTopPosition}px`
+          height: `${this.size}px`,
+          width: `${this.size}px`
         }
       },
 
-      squareStyle () {
+      spinnerPartStyle () {
         return {
-          height: `${this.squareSize}px`,
-          width: `${this.squareSize}px`,
-          top: `${this.initialTopPosition}px`,
-          marginRight: `${this.squareSize / 3}px`,
-          marginTop: `${this.squareSize / 3}px`,
-          animationDuration: `${this.animationDuration}ms`,
-          background: this.color
+          height: `${this.size / 2}px`,
+          width: `${this.size}px`
         }
       },
 
-      squaresStyles () {
-        const squaresStyles = []
-        const delaysMultipliers = [6, 7, 8, 3, 4, 5, 0, 1, 2]
-        const delayModifier = this.animationDuration * 0.05
-
-        for (let i = 0; i < this.squaresNum; i++) {
-          squaresStyles.push(Object.assign({
-            animationDelay: `${delayModifier * delaysMultipliers[i]}ms`
-          }, this.squareStyle))
+      rotatorStyle () {
+        return {
+          height: `${this.size}px`,
+          width: `${this.size}px`,
+          borderRightColor: this.color,
+          borderTopColor: this.color,
+          borderWidth: `${this.size / 7}px`,
+          animationDuration: `${this.animationDuration}ms`
         }
-
-        return squaresStyles
       }
     }
   }
@@ -76,8 +59,6 @@
 
 <style  lang="scss" scoped>
   .spring-spinner-part {
-    width: 70px;
-    height: 35px;
     overflow: hidden;
 
     &.bottom {
@@ -89,11 +70,7 @@
     width: 70px;
     height: 70px;
     border-style: solid;
-    border-top-color: #FFF;
-    border-right-color: #FFF;
-    border-left-color: transparent;
-    border-bottom-color: transparent;
-    border-width: 10px;
+    border-color: transparent;
     border-radius: 50%;
     box-sizing: border-box;
     animation: spring-spinner-animation 3s ease-in-out infinite;

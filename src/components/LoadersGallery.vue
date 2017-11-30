@@ -142,7 +142,11 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <spring-spinner/>
+        <spring-spinner
+          :animation-duration="3000"
+          :size="60"
+          :color="spinnerColor"
+        />
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
