@@ -1,6 +1,7 @@
 <template>
   <div class="half-circle-spinner">
-
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
   </div>
 </template>
 
@@ -61,8 +62,7 @@
     position: relative;
     margin: 0 auto;
 
-    &:before,
-    &:after {
+    .circle {
       content: "";
       position: absolute;
       top: -10px;
@@ -71,20 +71,20 @@
       height: 100%;
       border-radius: 100%;
       border: 10px solid transparent;
-    }
 
-    &:before {
-      border-top-color: #fff;
-      animation: spin 1s infinite;
-    }
+      &.circle-1 {
+        border-top-color: #fff;
+        animation: half-circle-spinner-animation 1s infinite;
+      }
 
-    &:after {
-      animation: spin 1s infinite alternate;
-      border-bottom-color: #fff;
+      &.circle-2 {
+        animation: half-circle-spinner-animation 1s infinite alternate;
+        border-bottom-color: #fff;
+      }
     }
   }
 
-  @keyframes spin {
+  @keyframes half-circle-spinner-animation {
     0% {
       transform: rotate(0deg);
 
