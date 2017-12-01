@@ -112,7 +112,7 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <rotating-squares-spinner
+        <scaling-squares-spinner
           :animation-duration="1250"
           :size="50"
           :color="spinnerColor"
@@ -194,7 +194,7 @@
   import DiamondSpinner from './spinners/DiamondSpinner.vue'
   import BreedingRhombusSpinner from './spinners/BreedingRhombusSpinner.vue'
   import SwappingSquaresSpinner from './spinners/SwappingSquaresSpinner.vue'
-  import RotatingSquaresSpinner from './spinners/RotatingSquaresSpinner.vue'
+  import ScalingSquaresSpinner from './spinners/ScalingSquaresSpinner.vue'
   import FulfillingBouncingCircleSpinner from './spinners/FulfillingBouncingCircleSpinner.vue'
   import RadarSpinner from './spinners/RadarSpinner.vue'
   import SelfBuildingSquareSpinner from './spinners/SelfBuildingSquareSpinner.vue'
@@ -219,7 +219,7 @@
       DiamondSpinner,
       BreedingRhombusSpinner,
       SwappingSquaresSpinner,
-      RotatingSquaresSpinner,
+      ScalingSquaresSpinner,
       FulfillingBouncingCircleSpinner,
       RadarSpinner,
       SelfBuildingSquareSpinner,

@@ -1,5 +1,5 @@
 <template>
-  <div class="rotating-squares-spinner" :style="spinnerStyle">
+  <div class="scaling-squares-spinner" :style="spinnerStyle">
       <div class="square"
            v-for="(ss, index) in squaresStyles"
            :key="index"
@@ -11,7 +11,7 @@
 
 <script>
   export default {
-    name: 'RotatingSquaresSpinner',
+    name: 'ScalingSquaresSpinner',
 
     props: {
       animationDuration: {
@@ -70,7 +70,7 @@
 </script>
 
 <style  lang="scss" scoped>
-  .rotating-squares-spinner {
+  .scaling-squares-spinner {
     position: relative;
     animation-name: swapping-squares-animation;
     animation-iteration-count: infinite;
