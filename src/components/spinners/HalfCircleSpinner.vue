@@ -1,7 +1,7 @@
 <template>
-  <div class="half-circle-spinner">
-    <div class="circle circle-1"></div>
-    <div class="circle circle-2"></div>
+  <div class="half-circle-spinner" :style="spinnerStyle">
+    <div class="circle circle-1" :style="circle1Style"></div>
+    <div class="circle circle-2" :style="circle2Style"></div>
   </div>
 </template>
 
@@ -12,11 +12,11 @@
     props: {
       animationDuration: {
         type: Number,
-        default: 3000
+        default: 1000
       },
       size: {
         type: Number,
-        default: 70
+        default: 60
       },
       color: {
         type: String,
@@ -32,23 +32,23 @@
         }
       },
 
-      spinnerPartStyle () {
+      circleStyle () {
         return {
-          height: `${this.size / 2}px`,
-          width: `${this.size}px`
+          borderWidth: `${this.size / 10}px`,
+          animationDuration: `${this.animationDuration}ms`
         }
       },
 
-      rotatorStyle () {
-        return {
-          height: `${this.size}px`,
-          width: `${this.size}px`,
-          borderRightColor: this.color,
-          borderTopColor: this.color,
-          borderWidth: `${this.size / 7}px`,
-          animationDuration: `${this.animationDuration}ms`,
-          animationName: this.currentAnimationName
-        }
+      circle1Style () {
+        return Object.assign({
+          borderTopColor: this.color
+        }, this.circleStyle)
+      },
+
+      circle2Style () {
+        return Object.assign({
+          borderBottomColor: this.color
+        }, this.circleStyle)
       }
     }
   }
@@ -56,30 +56,25 @@
 
 <style  lang="scss" scoped>
   .half-circle-spinner {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     border-radius: 100%;
     position: relative;
-    margin: 0 auto;
 
     .circle {
       content: "";
       position: absolute;
-      top: -10px;
-      left: -10px;
       width: 100%;
       height: 100%;
       border-radius: 100%;
-      border: 10px solid transparent;
+      border: 6px solid transparent;
 
       &.circle-1 {
-        border-top-color: #fff;
         animation: half-circle-spinner-animation 1s infinite;
       }
 
       &.circle-2 {
         animation: half-circle-spinner-animation 1s infinite alternate;
-        border-bottom-color: #fff;
       }
     }
   }
