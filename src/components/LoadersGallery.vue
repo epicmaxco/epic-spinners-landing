@@ -175,7 +175,7 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-
+        <atom-spinner />
       </loaders-gallery-item>
     </div>
   </div>
@@ -203,6 +203,7 @@
   import SpringSpinner from './spinners/SpringSpinner.vue'
   import LoopingRhombusesSpinner from './spinners/LoopingRhombusesSpinner.vue'
   import HalfCircleSpinner from './spinners/HalfCircleSpinner.vue'
+  import AtomSpinner from './spinners/AtomSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
@@ -228,6 +229,7 @@
       SpringSpinner,
       LoopingRhombusesSpinner,
       HalfCircleSpinner,
+      AtomSpinner
     },
 
     data () {
