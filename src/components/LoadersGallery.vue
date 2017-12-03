@@ -175,7 +175,11 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <atom-spinner />
+        <atom-spinner
+          :animation-duration="1000"
+          :size="60"
+          :color="spinnerColor"
+        />
       </loaders-gallery-item>
     </div>
   </div>
