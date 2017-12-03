@@ -4,7 +4,10 @@
       <div class="spinner-line"></div>
       <div class="spinner-line"></div>
       <div class="spinner-line"></div>
-      <div class="spinner-circle"></div>
+      <!--Chrome renders little circles malformed :(-->
+      <div class="spinner-circle">
+        <div class="spinner-circle-inner"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -56,7 +59,6 @@
       width: $size;
       position: relative;
       color: #ff1d5e;
-      perspective: 900px;
       display: block;
     }
 
@@ -64,12 +66,21 @@
       display: block;
       width: 18%;
       height: 18%;
-      background: #ff1d5e;
       border-radius: 50%;
+      overflow: hidden;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      background: #ff1d5e;
+      -webkit-clip-path: circle(50% at 50% 50%);
+
+
+      .spinner-circle-inner {
+        height: 100%;
+        width: 100%;
+        background: #ff1d5e;
+      }
     }
 
     .spinner-line {
