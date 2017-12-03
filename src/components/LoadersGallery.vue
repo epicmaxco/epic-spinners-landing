@@ -175,7 +175,7 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <rotating-squares-spinner />
+
       </loaders-gallery-item>
     </div>
   </div>
@@ -203,7 +203,6 @@
   import SpringSpinner from './spinners/SpringSpinner.vue'
   import LoopingRhombusesSpinner from './spinners/LoopingRhombusesSpinner.vue'
   import HalfCircleSpinner from './spinners/HalfCircleSpinner.vue'
-  import RotatingSquaresSpinner from './spinners/RotatingSquaresSpinner.vue'
 
   export default {
     name: 'LoadersGallery',
@@ -229,7 +228,6 @@
       SpringSpinner,
       LoopingRhombusesSpinner,
       HalfCircleSpinner,
-      RotatingSquaresSpinner
     },
 
     data () {
