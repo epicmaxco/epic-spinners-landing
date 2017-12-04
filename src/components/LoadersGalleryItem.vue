@@ -1,13 +1,26 @@
 <template>
-  <div class="loaders-gallery-item">
-    <div class="spinner"><slot></slot></div>
-    <div class="tap-to-view-code">Tap to view code</div>
+  <div class="loader-item-container">
+    <div class="loaders-gallery-item" @click="showModal = true">
+      <div class="spinner"><slot></slot></div>
+      <modal :show="showModal" @close="showModal = false"></modal>
+      <span class="tap-to-view-code">Tap to view code</span>
+    </div>
   </div>
 </template>
 
+
 <script>
+  import Modal from './ModalVue'
   export default {
-    name: 'LoadersGalleryItem'
+    name: 'LoadersGalleryItem',
+    data () {
+      return {
+        showModal: false
+      }
+    },
+    components: {
+      Modal
+    }
   }
 </script>
 
@@ -44,11 +57,13 @@
       font-size: 16px;
       font-weight: 600;
       text-align: center;
-      color: #ff1d5e;
+      justify-content: center;
+      color: $brand-main-color;
     }
     &:hover {
       cursor: pointer;
       background-color: white;
+      border: white;
       width: 190px;
       height: 190px;
       box-shadow: 0px 4px 12px 0px rgba(54, 193, 255, 0.1),   0px 2px 20px 0px rgba(104, 37, 113, 0.5);

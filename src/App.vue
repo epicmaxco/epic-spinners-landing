@@ -10,6 +10,7 @@
 <script>
 import LoadersHeader from '@/components/LoadersHeader'
 import LoadersFooter from '@/components/LoadersFooter'
+
 export default {
   name: 'app',
   components: {
