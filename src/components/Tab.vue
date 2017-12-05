@@ -1,11 +1,18 @@
 <template>
   <div class="tabs">
-    <!--<h2>Tabs Demo</h2>-->
-    <div>
-      <button v-for="index in count"
-              :class="{active : currentIndex === index }"
-              @click="setCurrentIndex(index)">test
-      </button>
+    <div class="buttons">
+      <div class="button"
+           v-for="index in count"
+           :class="{active : currentIndex === index }"
+           @click="setCurrentIndex(index)">test
+           <!--v-if="index === 0">test-->
+      </div>
+      <!--<div class="button"-->
+           <!--v-for="index in count"-->
+           <!--:class="{active : currentIndex === index }"-->
+           <!--@click="setCurrentIndex(index)"-->
+           <!--v-if="index === 1">test2-->
+      <!--</div>-->
     </div>
     <div class="tab-content">
       <div :class="'slot' + index" v-show="index === currentIndex" v-for="index in count">
@@ -41,23 +48,28 @@
   .tabs{
     height: 100%;
     width: 100%;
+    /*display: flex;*/
   }
 
-  button{
+  .buttons{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .button{
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    text-align: center;
     width: 50%;
     height: 48px;
-    /*padding: 10px;*/
+    background-color: #f0f0f0;
   }
-  button.active{
-    /*background-color: blue;*/
-  }
+
   .tab-content div{
     padding: 30px;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+    height: 492px;
     /*margin: 0 auto;*/
   }
 </style>
