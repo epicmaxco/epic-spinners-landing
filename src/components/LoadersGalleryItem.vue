@@ -1,8 +1,8 @@
 <template>
   <div class="loader-item-container">
-    <div class="loaders-gallery-item" @click="showModal = true">
+    <div class="loaders-gallery-item" @click="this.open">
       <div class="spinner"><slot></slot></div>
-      <modal :show="showModal" @close="showModal = false"></modal>
+      <modal v-show="showModal" @close="this.close"></modal>
       <span class="tap-to-view-code">Tap to view code</span>
     </div>
   </div>
@@ -17,6 +17,21 @@
       return {
         showModal: false
       }
+    },
+    methods: {
+      close () {
+        this.showModal = false
+      },
+      open () {
+        this.showModal = true
+      }
+    },
+    mounted: function () {
+      document.addEventListener('keydown', (e) => {
+        if (this.showModal && e.keyCode === 27) {
+          this.close()
+        }
+      })
     },
     components: {
       Modal
