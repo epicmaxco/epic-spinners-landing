@@ -2,30 +2,17 @@
     <transition name="modal">
         <div class="modal-mask" @click="close" v-show="show">
             <div class="modal-container" @click.stop>
-                <div class="modal-header">
-                    <h3>New Post</h3>
-                </div>
-                <div class="modal-body">
-                    <label class="form-label">
-                        Title
-                        <input class="form-control">
-                    </label>
-                    <label class="form-label">
-                        Body
-                        <textarea rows="5" class="form-control"></textarea>
-                    </label>
-                </div>
-                <div class="modal-footer text-right">
-                    <!--<button class="modal-default-button" @click="savePost()">-->
-                        <!--Save-->
-                    <!--</button>-->
-                </div>
+              <Tabs>
+                <div slot="1">Test 0 </div>
+                <div slot="2">Test 1 </div>
+              </Tabs>
             </div>
         </div>
     </transition>
 </template>
 
 <script>
+  import Tabs from '../components/Tab'
   export default {
     name: 'modal',
     props: ['show'],
@@ -34,6 +21,9 @@
         event.stopPropagation()
         this.$emit('close')
       }
+    },
+    components: {
+      Tabs
     }
   }
 </script>
@@ -55,43 +45,19 @@
   }
 
   .modal-container {
-    width: 300px;
+    width: 540px;
+    height: 540px;
+    color: #100f0f;
     margin: 40px auto 0;
-    padding: 20px 30px;
-    background-color: #fff;
+    /*padding: 20px 30px;*/
+    background-color: #ffffff;
     border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    box-shadow: 0 2px 20px 0 rgba(104, 37, 113, 0.5);
     transition: all .3s ease;
     font-family: Helvetica, Arial, sans-serif;
+    /*position: center;*/
+    align-items: center;
+    justify-content: center;
   }
 
-  .modal-header h3 {
-    margin-top: 0;
-    color: #42b983;
-  }
-
-  .modal-body {
-    margin: 20px 0;
-  }
-
-  .text-right {
-    text-align: right;
-  }
-
-  .form-label {
-    display: block;
-    margin-bottom: 1em;
-  }
-
-  .form-label > .form-control {
-    margin-top: 0.5em;
-  }
-
-  .form-control {
-    display: block;
-    width: 100%;
-    padding: 0.5em 1em;
-    line-height: 1.5;
-    border: 1px solid #ddd;
-  }
 </style>
