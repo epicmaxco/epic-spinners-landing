@@ -61,6 +61,7 @@
 
 <style  lang="scss" scoped>
   .atom-spinner {
+    overflow: hidden;
 
     .spinner-inner {
       position: relative;
