@@ -6,9 +6,10 @@
       <div class="spinner-line" :style="lineStyle"></div>
       <!--Chrome renders little circles malformed :(-->
       <div class="spinner-circle" :style="circleStyle">
-        <div class="spinner-circle-inner"></div>
+        &#9679;
       </div>
     </div>
+
   </div>
 </template>
 
@@ -27,7 +28,7 @@
       },
       color: {
         type: String,
-        default: '#fff'
+        default: 'red'
       }
     },
 
@@ -41,7 +42,8 @@
 
       circleStyle () {
         return {
-          background: this.color
+          color: this.color,
+          fontSize: `${this.size * 0.24}px`
         }
       },
 
@@ -59,6 +61,7 @@
 
 <style  lang="scss" scoped>
   .atom-spinner {
+
     .spinner-inner {
       position: relative;
       display: block;
@@ -66,21 +69,10 @@
 
     .spinner-circle {
       display: block;
-      width: 18%;
-      height: 18%;
-      border-radius: 50%;
-      overflow: hidden;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      -webkit-clip-path: circle(50% at 50% 50%);
-
-      .spinner-circle-inner {
-        height: 100%;
-        width: 100%;
-        background: inherit;
-      }
     }
 
     .spinner-line {
