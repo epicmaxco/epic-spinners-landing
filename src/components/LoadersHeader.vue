@@ -7,7 +7,7 @@
         </a>
       </div>
 
-      <div class="text-center title">Awwwsome Loaders</div>
+      <div class="text-center title">Epic Spinners</div>
       <div class="text-right">
         <div class="links-wrapper">
           <router-link class="main-link" to="/">Gallery</router-link>

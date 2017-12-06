@@ -3,7 +3,7 @@
     <div class="top-line">
       <div class="container">
         <div class="left-part">
-          <div class="vuestic-text">Awwwsome Spinners perfectly fit Vuestic Admin Theme.</div>
+          <div class="vuestic-text">Epic Spinners perfectly fit Vuestic Admin Theme.</div>
           <div class="links-wrapper">
             <a href="https://github.com" target="_blank" class="github-button flex">
               <i class="fa fa-github" aria-hidden="true"></i>Vuestic on GitHub
