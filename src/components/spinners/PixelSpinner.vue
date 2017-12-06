@@ -77,12 +77,8 @@
       },
 
       generateKeyframes () {
-        return `0% {
-          opacity: 0.5;
-        }
-
+        return `
         50% {
-          opacity: 1;
           box-shadow:  ${this.pixelSize * 2}px ${this.pixelSize * 2}px 0 0,
                        ${this.pixelSize * -2}px ${this.pixelSize * -2}px 0 0,
                        ${this.pixelSize * 2}px ${this.pixelSize * -2}px 0 0,
@@ -106,7 +102,6 @@
         }
 
         100% {
-          opacity: 0.5;
           transform: rotate(360deg);
         }`
       }
