@@ -65,14 +65,16 @@
 
     .tap-to-view-code {
       position: absolute;
+      /*bottom: 12px;*/
       bottom: 0;
       display: none;
-      width: 100%;
+      width: auto;
       height: 20%;
       font-size: 16px;
       font-weight: 600;
       text-align: center;
       color: #ff1d5e;
+      /*transition : width ease .0s, height ease .0s;*/
     }
 
     &:hover {
@@ -81,10 +83,11 @@
       width: 160px;
       height: 160px;
       box-shadow: 0px 4px 12px 0px rgba(54, 193, 255, 0.1),   0px 2px 20px 0px rgba(104, 37, 113, 0.5);
-      //transition : width ease $duration, height ease $duration;
+      //transition : width ease .0s, height ease .0s;
       .tap-to-view-code {
-        display: inline;
+        font-size: 16px;
+        display: block;
       }
-    }
+      }
   }
 </style>

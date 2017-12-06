@@ -2,10 +2,12 @@
     <transition name="modal">
         <div class="modal-mask" @click="close" v-show="show">
             <div class="modal-container" @click.stop>
-              <Tabs>
-                <div slot="1">Test 0 </div>
-                <div slot="2">Test 1 </div>
-              </Tabs>
+              <!--<div class="modal-header">-->
+                <Tabs>
+                  <!--<div slot="1">Test 0 </div>-->
+                  <!--<div slot="2">Test 1 </div>-->
+                </Tabs>
+              <!--</div>-->
             </div>
         </div>
     </transition>
@@ -55,9 +57,24 @@
     box-shadow: 0 2px 20px 0 rgba(104, 37, 113, 0.5);
     transition: all .3s ease;
     font-family: Helvetica, Arial, sans-serif;
-    /*position: center;*/
+    position: center;
     align-items: center;
     justify-content: center;
   }
+
+  .modal-enter {
+    opacity: 0;
+  }
+
+  .modal-leave-active {
+    opacity: 0;
+  }
+
+  .modal-enter .modal-container,
+  .modal-leave-active .modal-container {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
 
 </style>
