@@ -1,11 +1,11 @@
 <template>
   <div class="loaders-gallery">
+    <!-- row one -->
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <hollow-dots-spinner
-          :animation-duration="1000"
-          :dot-size="15"
-          :dots-num="3"
+        <flower-spinner
+          :animation-duration="2500"
+          :dot-size="10"
           :color="spinnerColor"
         />
       </loaders-gallery-item>
@@ -21,9 +21,10 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <flower-spinner
-          :animation-duration="2500"
-          :dot-size="10"
+        <hollow-dots-spinner
+          :animation-duration="1000"
+          :dot-size="15"
+          :dots-num="3"
           :color="spinnerColor"
         />
       </loaders-gallery-item>
@@ -46,10 +47,29 @@
         />
       </loaders-gallery-item>
     </div>
+    <!-- row 2 -->
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <polar-spinner
-          :animation-duration="1500"
+        <radar-spinner
+          :animation-duration="2000"
+          :size="60"
+          :color="spinnerColor"
+        />
+      </loaders-gallery-item>
+    </div>
+    <div class="gallery-item-container">
+      <loaders-gallery-item>
+        <scaling-squares-spinner
+          :animation-duration="1250"
+          :size="50"
+          :color="spinnerColor"
+        />
+      </loaders-gallery-item>
+    </div>
+    <div class="gallery-item-container">
+      <loaders-gallery-item>
+        <half-circle-spinner
+          :animation-duration="1000"
           :size="60"
           :color="spinnerColor"
         />
@@ -73,6 +93,7 @@
         />
       </loaders-gallery-item>
     </div>
+    <!-- row 3 -->
     <div class="gallery-item-container">
       <loaders-gallery-item>
         <circles-to-rhombuses-spinner
@@ -94,9 +115,9 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <breeding-rhombus-spinner
-          :animation-duration="2000"
-          :size="65"
+        <self-building-square-spinner
+          :animation-duration="6000"
+          :square-size="10"
           :color="spinnerColor"
         />
       </loaders-gallery-item>
@@ -110,15 +131,7 @@
         />
       </loaders-gallery-item>
     </div>
-    <div class="gallery-item-container">
-      <loaders-gallery-item>
-        <scaling-squares-spinner
-          :animation-duration="1250"
-          :size="50"
-          :color="spinnerColor"
-        />
-      </loaders-gallery-item>
-    </div>
+
     <div class="gallery-item-container">
       <loaders-gallery-item>
         <fulfilling-bouncing-circle-spinner
@@ -128,19 +141,11 @@
         />
       </loaders-gallery-item>
     </div>
+    <!-- row 4 -->
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <radar-spinner
-          :animation-duration="2000"
-          :size="60"
-          :color="spinnerColor"
-        />
-      </loaders-gallery-item>
-    </div>
-    <div class="gallery-item-container">
-      <loaders-gallery-item>
-        <half-circle-spinner
-          :animation-duration="1000"
+        <polar-spinner
+          :animation-duration="1500"
           :size="60"
           :color="spinnerColor"
         />
@@ -157,9 +162,9 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <self-building-square-spinner
-          :animation-duration="6000"
-          :square-size="10"
+        <atom-spinner
+          :animation-duration="1000"
+          :size="60"
           :color="spinnerColor"
         />
       </loaders-gallery-item>
@@ -175,9 +180,9 @@
     </div>
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <atom-spinner
-          :animation-duration="1000"
-          :size="60"
+        <breeding-rhombus-spinner
+          :animation-duration="2000"
+          :size="65"
           :color="spinnerColor"
         />
       </loaders-gallery-item>
@@ -211,6 +216,7 @@
 
   export default {
     name: 'LoadersGallery',
+
     components: {
       LoadersGalleryItem,
       HollowDotsSpinner,
@@ -244,7 +250,6 @@
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style  lang="scss">
   .loaders-gallery {
     display: flex;
@@ -261,5 +266,4 @@
     justify-content: center;
     align-items: center;
   }
-
 </style>

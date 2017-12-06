@@ -39,22 +39,21 @@
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style  lang="scss" scoped>
   @import "../sass/variables";
 
-
   .loaders-gallery-item {
     position: relative;
-    width: 160px;
-    height: 160px;
+    width: 100px;
+    height: 100px;
     border-radius: 8px;
-    border: solid 1px #1c1c1e;
+    border: solid 0px #1c1c1e;
     display: flex;
     flex-direction: column;
     align-items: center;
     $duration: .3s;
     transition : width ease $duration, height ease $duration;
+
     .spinner {
       align-self: center;
       width: 100%;
@@ -63,6 +62,7 @@
       justify-content: center;
       align-items: center;
     }
+
     .tap-to-view-code {
       position: absolute;
       bottom: 0;
@@ -72,15 +72,14 @@
       font-size: 16px;
       font-weight: 600;
       text-align: center;
-      justify-content: center;
-      color: $brand-main-color;
+      color: #ff1d5e;
     }
+
     &:hover {
       cursor: pointer;
       background-color: white;
-      border: white;
-      width: 190px;
-      height: 190px;
+      width: 160px;
+      height: 160px;
       box-shadow: 0px 4px 12px 0px rgba(54, 193, 255, 0.1),   0px 2px 20px 0px rgba(104, 37, 113, 0.5);
       //transition : width ease $duration, height ease $duration;
       .tap-to-view-code {
@@ -89,4 +88,3 @@
     }
   }
 </style>
-
