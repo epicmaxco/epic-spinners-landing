@@ -1,7 +1,8 @@
 <template>
   <div class="flower-spinner" :style="spinnerStyle">
-    <div class="smaller-dot" :style="smallerDotStyle"></div>
-    <div class="bigger-dot" :style="biggerDotStyle"></div>
+    <div class="bigger-dot" :style="biggerDotStyle">
+      <div class="smaller-dot" :style="smallerDotStyle"></div>
+    </div>
   </div>
 </template>
 
@@ -43,18 +44,8 @@
         }
       },
 
-      smallerDotSize () {
-        return this.dotSize * 0.9
-      },
-
       smallerDotStyle () {
         return {
-          width: `${this.smallerDotSize}px`,
-          height: `${this.smallerDotSize}px`,
-          top: `${(this.size - this.smallerDotSize) / 2}px`,
-          left: `${(this.size - this.smallerDotSize) / 2}px`,
-          bottom: `${(this.size - this.smallerDotSize) / 2}px`,
-          right: `${(this.size - this.smallerDotSize) / 2}px`,
           background: this.color,
           animationDuration: `${this.animationDuration}ms`,
           animationName: this.currentSmallerDotAnimationBaseName
@@ -63,8 +54,6 @@
 
       biggerDotStyle () {
         return {
-          width: `${this.dotSize}px`,
-          height: `${this.dotSize}px`,
           background: this.color,
           animationDuration: `${this.animationDuration}ms`,
           animationName: this.currentBiggerDotAnimationBaseName
@@ -108,9 +97,6 @@
                                 0 0 0 ${this.color},
                                 0 0 0 ${this.color};
                   }
-                  50% {
-                    transform: rotate(180deg);
-                  }
                   25%, 75% {
                     box-shadow: ${this.dotSize * 1.4}px 0 0 ${this.color},
                                 -${this.dotSize * 1.4}px 0 0 ${this.color},
@@ -123,7 +109,6 @@
 
                   }
                   100% {
-                    transform: rotate(360deg);
                     box-shadow: 0 0 0 ${this.color},
                                 0 0 0 ${this.color},
                                 0 0 0 ${this.color},
@@ -180,15 +165,16 @@
   .flower-spinner{
     position: relative;
     .smaller-dot {
-      position: absolute;
+      height: 100%;
+      width: 100%;
       border-radius: 50%;
       animation: flower-spinner-smaller-dot-animation 2.5s 0s infinite both;
 
     }
     .bigger-dot {
-      position: absolute;
-      top: 0;
-      left: 0;
+      height: 100%;
+      width: 100%;
+      padding: 10%;
       border-radius: 50%;
       animation: flower-spinner-bigger-dot-animation 2.5s 0s infinite both;
 
