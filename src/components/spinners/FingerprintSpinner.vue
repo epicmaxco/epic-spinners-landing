@@ -1,12 +1,12 @@
 <template>
-  <div class="polar-spinner" :style="spinnerStyle">
+  <div class="fingerprint-spinner" :style="spinnerStyle">
     <div class="spinner-ring" v-for="(rs, index) in ringsStyles" :style="rs" :key="index"></div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'PolarSpinner',
+    name: 'FingerprintSpinner',
 
     props: {
       animationDuration: {
@@ -63,7 +63,7 @@
 </script>
 
 <style  lang="scss" scoped>
-  .polar-spinner {
+  .fingerprint-spinner {
     overflow: hidden;
     position: relative;
   }

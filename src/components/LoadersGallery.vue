@@ -144,7 +144,7 @@
     <!-- row 4 -->
     <div class="gallery-item-container">
       <loaders-gallery-item>
-        <polar-spinner
+        <fingerprint-spinner
           :animation-duration="1500"
           :size="60"
           :color="spinnerColor"
@@ -197,7 +197,7 @@
   import FlowerSpinner from './spinners/FlowerSpinner.vue'
   import IntersectingCirclesSpinner from './spinners/IntersectingCirclesSpinner.vue'
   import OrbitSpinner from './spinners/OrbitSpinner.vue'
-  import PolarSpinner from './spinners/PolarSpinner.vue'
+  import FingerprintSpinner from './spinners/FingerprintSpinner.vue'
   import TrinityRingsSpinner from './spinners/TrinityRingsSpinner.vue'
   import FulfillingSquareSpinner from './spinners/FulfillingSquareSpinner.vue'
   import CirclesToRhombusesSpinner from './spinners/CirclesToRhombusesSpinner.vue'
@@ -224,7 +224,7 @@
       FlowerSpinner,
       IntersectingCirclesSpinner,
       OrbitSpinner,
-      PolarSpinner,
+      FingerprintSpinner,
       TrinityRingsSpinner,
       FulfillingSquareSpinner,
       CirclesToRhombusesSpinner,
