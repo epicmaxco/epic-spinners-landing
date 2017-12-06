@@ -75,7 +75,7 @@
       color: #ff1d5e;
     }
 
-    &:hover {
+
       cursor: pointer;
       background-color: white;
       width: 160px;
@@ -84,7 +84,6 @@
       //transition : width ease $duration, height ease $duration;
       .tap-to-view-code {
         display: inline;
-      }
     }
   }
 </style>

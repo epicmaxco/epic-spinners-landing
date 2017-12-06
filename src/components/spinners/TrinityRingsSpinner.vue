@@ -70,6 +70,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    overflow: hidden;
   }
   .circle{
     position:absolute;
