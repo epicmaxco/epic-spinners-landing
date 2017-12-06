@@ -46,7 +46,6 @@
     display: inline-block;
     position: relative;
     border: 4px solid #fff;
-    opacity: 1;
     animation: fulfilling-square-spinner-animation 4s infinite ease;
   }
 
@@ -60,7 +59,6 @@
 
   @keyframes fulfilling-square-spinner-animation {
     0% {
-      opacity: 0.5;
       transform: rotate(0deg);
     }
 
@@ -73,12 +71,10 @@
     }
 
     75% {
-      opacity: 1;
       transform: rotate(360deg);
     }
 
     100% {
-      opacity: 0.5;
       transform: rotate(360deg);
     }
   }
