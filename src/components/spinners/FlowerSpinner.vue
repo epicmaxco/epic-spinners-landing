@@ -43,10 +43,18 @@
         }
       },
 
+      smallerDotSize () {
+        return this.dotSize * 0.9
+      },
+
       smallerDotStyle () {
         return {
-          width: `${this.dotSize * 0.9}px`,
-          height: `${this.dotSize * 0.9}px`,
+          width: `${this.smallerDotSize}px`,
+          height: `${this.smallerDotSize}px`,
+          top: `${(this.size - this.smallerDotSize) / 2}px`,
+          left: `${(this.size - this.smallerDotSize) / 2}px`,
+          bottom: `${(this.size - this.smallerDotSize) / 2}px`,
+          right: `${(this.size - this.smallerDotSize) / 2}px`,
           background: this.color,
           animationDuration: `${this.animationDuration}ms`,
           animationName: this.currentSmallerDotAnimationBaseName
@@ -174,13 +182,13 @@
     .smaller-dot {
       position: absolute;
       border-radius: 50%;
-      left: 1px;
-      top: 1px;
       animation: flower-spinner-smaller-dot-animation 2.5s 0s infinite both;
 
     }
     .bigger-dot {
       position: absolute;
+      top: 0;
+      left: 0;
       border-radius: 50%;
       animation: flower-spinner-bigger-dot-animation 2.5s 0s infinite both;
 
