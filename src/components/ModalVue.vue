@@ -2,12 +2,10 @@
     <transition name="modal">
         <div class="modal-mask" @click="close" v-show="show">
             <div class="modal-container" @click.stop>
-              <!--<div class="modal-header">-->
                 <Tabs>
                   <!--<div slot="1">Test 0 </div>-->
                   <!--<div slot="2">Test 1 </div>-->
                 </Tabs>
-              <!--</div>-->
             </div>
         </div>
     </transition>
@@ -36,6 +34,7 @@
   }
 
   .modal-mask {
+    cursor: default;
     position: fixed;
     z-index: 9998;
     top: 0;

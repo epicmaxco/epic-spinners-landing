@@ -13,15 +13,28 @@
       </div>
     </div>
     <div class="tab-content">
-      <div class="copy-html">
-        <button v-if="currentIndex === 1" id="copy-html-button">Copy HTML</button>
-        <button v-if="currentIndex === 2" id="copy-code-one">Copy code</button>
+      <div class="tab-panel" v-show="currentIndex === 1">
+        <div class="copy-html">
+          html code
+          <button v-on:click="callToasted()" id="copy-html-button">Copy HTML</button>
+        </div>
+        <div class="paste-code">
+          Paste the following code into style.css</div>
+        <div class="copy-css">
+          css code
+          <button v-on:click="callToasted()" id="copy-css-button">Copy CSS</button>
+        </div>
       </div>
-      <div class="paste-code" v-if="currentIndex === 1"></div>
-      <div class="separator" v-if="currentIndex === 2"></div>
-      <div class="copy-css">
-        <button v-if="currentIndex === 1" id="copy-css-button">Copy CSS</button>
-        <button v-if="currentIndex === 2" id="copy-code-two">Copy code</button>
+      <div class="tab-panel" v-show="currentIndex === 2">
+        <div class="copy-npm">
+          npm code
+          <button v-on:click="callToasted()" id="copy-code-one">Copy code</button>
+        </div>
+        <div class="separator"></div>
+        <div class="copy-vue-js">
+          vue code
+          <button v-on:click="callToasted()" id="copy-code-two">Copy code</button>
+        </div>
       </div>
     </div>
   </div>
@@ -44,10 +57,12 @@
       setCurrentIndex (index) {
         this.currentIndex = index
       },
-      setOpacity (index) {
-        if (index !== this.currentIndex) {
-          console.log('penis')
-        }
+      callToasted () {
+        let myToast = this.$toasted.show('Copied!', {
+          theme: 'primary',
+          position: 'top-right'
+        })
+        myToast.goAway(1200)
       }
     }
   }
@@ -76,6 +91,10 @@
     background-color: #f0f0f0;
   }
 
+  .button:hover {
+    cursor: pointer;
+  }
+
   .slider{
     width: 270px;
     height: 4px;
@@ -92,6 +111,11 @@
     text-align: center;
     position: relative;
     /*margin: 0 auto;*/
+  }
+
+  .tab-panel {
+    width: 100%;
+    height: 492px;
   }
 
   .copy-html{
@@ -113,6 +137,10 @@
     background-color: #100f0f;
     border-radius: 4px;
     border: none;
+  }
+
+  button:hover {
+    cursor: pointer;
   }
 
   button#copy-css-button {
@@ -137,6 +165,12 @@
     background-color: #f0f0f0;
     width: auto;
     height: 54px;
+    font-size: 14px;
+    text-align: left;
+    line-height: 54px;
+    padding-left: 24px;
+    /*position: absolute;*/
+    /*left: 24px;*/
   }
 
   .separator{
@@ -149,6 +183,18 @@
     position: relative;
     width: auto;
     height: 379px;
+  }
+
+  .copy-npm {
+    width: 100%;
+    height: 80px;
+    position: relative;
+  }
+
+  .copy-vue-js {
+    position: relative;
+    width: auto;
+    height: 358px;
   }
 
   span {
