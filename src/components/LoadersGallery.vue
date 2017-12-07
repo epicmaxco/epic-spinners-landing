@@ -79,7 +79,7 @@
       <loaders-gallery-item>
         <trinity-rings-spinner
           :animation-duration="1500"
-          :size="60"
+          :size="66"
           :color="spinnerColor"
         />
       </loaders-gallery-item>
