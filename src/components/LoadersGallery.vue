@@ -33,7 +33,7 @@
       <loaders-gallery-item>
         <intersecting-circles-spinner
           :animation-duration="1200"
-          :circle-size="35"
+          :size="70"
           :color="spinnerColor"
         />
       </loaders-gallery-item>
