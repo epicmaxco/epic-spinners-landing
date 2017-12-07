@@ -14,7 +14,7 @@
       <loaders-gallery-item>
         <pixel-spinner
           :animation-duration="2000"
-          :pixel-size="10"
+          :size="70"
           :color="spinnerColor"
         />
       </loaders-gallery-item>
