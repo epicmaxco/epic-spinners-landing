@@ -117,7 +117,7 @@
       <loaders-gallery-item>
         <self-building-square-spinner
           :animation-duration="6000"
-          :square-size="10"
+          :size="40"
           :color="spinnerColor"
         />
       </loaders-gallery-item>

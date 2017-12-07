@@ -5,7 +5,7 @@
          :key="index"
          :style="ss"
          :class="{'clear': index && index % 3 === 0}"
-         >
+    >
     </div>
   </div>
 </template>
@@ -19,9 +19,9 @@
         type: Number,
         default: 6000
       },
-      squareSize: {
+      size: {
         type: Number,
-        default: 10
+        default: 40
       },
       color: {
         type: String,
@@ -36,13 +36,19 @@
     },
 
     computed: {
+      squareSize () {
+        return this.size / 4
+      },
+
       initialTopPosition () {
         return -this.squareSize * 2 / 3
       },
 
       spinnerStyle () {
         return {
-          top: `${-this.initialTopPosition}px`
+          top: `${-this.initialTopPosition}px`,
+          height: `${this.size}px`,
+          width: `${this.size}px`
         }
       },
 
