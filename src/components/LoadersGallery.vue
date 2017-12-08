@@ -61,7 +61,7 @@
       <loaders-gallery-item>
         <scaling-squares-spinner
           :animation-duration="1250"
-          :size="50"
+          :size="65"
           :color="spinnerColor"
         />
       </loaders-gallery-item>
