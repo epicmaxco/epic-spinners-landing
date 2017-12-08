@@ -1,11 +1,11 @@
 <template>
   <div class="swapping-squares-spinner" :style="spinnerStyle">
-      <div class="square"
-           v-for="(ss, index) in squaresStyles"
-           :key="index"
-           :class="`square-${index + 1}`"
-           :style="ss">
-      </div>
+    <div class="square"
+         v-for="(ss, index) in squaresStyles"
+         :key="index"
+         :class="`square-${index + 1}`"
+         :style="ss">
+    </div>
   </div>
 </template>
 
@@ -20,7 +20,7 @@
       },
       size: {
         type: Number,
-        default: 50
+        default: 65
       },
       color: {
         type: String,
@@ -45,12 +45,10 @@
 
       squareStyle () {
         return {
-          height: `${this.size * 0.25}px`,
-          width: `${this.size * 0.25}px`,
+          height: `${this.size * 0.25 / 1.3}px`,
+          width: `${this.size * 0.25 / 1.3}px`,
           animationDuration: `${this.animationDuration}ms`,
-          top: `${this.size * 0.37}px`,
-          left: `${this.size * 0.37}px`,
-          borderWidth: `${this.size * 0.04}px`,
+          borderWidth: `${this.size * 0.04 / 1.3}px`,
           borderColor: this.color
         }
       },
@@ -72,8 +70,16 @@
 </script>
 
 <style  lang="scss" scoped>
+  * {
+    box-sizing: border-box;
+  }
+
   .swapping-squares-spinner {
     position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .square {
