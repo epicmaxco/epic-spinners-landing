@@ -3,8 +3,6 @@
         <div class="modal-mask" @click="close" v-show="show">
             <div class="modal-container" @click.stop>
                 <Tabs>
-                  <!--<div slot="1">Test 0 </div>-->
-                  <!--<div slot="2">Test 1 </div>-->
                 </Tabs>
             </div>
         </div>
@@ -50,7 +48,6 @@
     height: 540px;
     color: #100f0f;
     margin: 40px auto 0;
-    /*padding: 20px 30px;*/
     background-color: #ffffff;
     border-radius: 2px;
     box-shadow: 0 2px 20px 0 rgba(104, 37, 113, 0.5);

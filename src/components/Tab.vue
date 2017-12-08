@@ -1,21 +1,27 @@
 <template>
   <div class="tabs">
     <div class="tabs-header">
-      <div class="button"
-           v-for="index in count"
-           :class="{active : currentIndex === index }"
-           @click="setCurrentIndex(index)">
-        <span v-if="index === 1">HTML & CSS</span>
-        <span v-if="index === 2" id="npm">NPM & VUE.JS</span>
-        <div class="slider"
-             v-if="currentIndex === index">
+      <div class="buttons-container">
+        <div class="button"
+             v-for="index in count"
+             :class="{active : currentIndex === index}"
+             @click="setCurrentIndex(index)">
+          <span v-if="index === 1 && currentIndex === index">HTML & CSS</span>
+          <span v-if="index === 1 && currentIndex !== index" id="html">HTML & CSS</span>
+          <span v-if="index === 2 && currentIndex === index">NPM & VUE.JS</span>
+          <span v-if="index === 2 && currentIndex !== index" id="npm" style="opacity: 0.6">NPM & VUE.JS</span>
+          <div class="slider-mini"
+          v-if="currentIndex !== index">
+          </div>
         </div>
+      </div>
+      <div class="slider-container">
+        <div class="slider" :style="sliderLeft + '; width: ' + sliderWidth"></div>
       </div>
     </div>
     <div class="tab-content">
       <div class="tab-panel" v-show="currentIndex === 1">
         <div class="copy-html">
-          html code
           <button v-on:click="callToasted()" id="copy-html-button">Copy HTML</button>
         </div>
         <div class="paste-code">
@@ -50,12 +56,19 @@
     },
     data () {
       return {
-        currentIndex: 1
+        currentIndex: 1,
+        sliderWidth: '50%'
+      }
+    },
+    computed: {
+      sliderLeft () {
+        return `left: ${this.currentIndex === 1 ? '0%' : '50%'}`
       }
     },
     methods: {
       setCurrentIndex (index) {
         this.currentIndex = index
+        this.animateSliderWidth()
       },
       callToasted () {
         let myToast = this.$toasted.show('Copied!', {
@@ -63,54 +76,71 @@
           position: 'top-right'
         })
         myToast.goAway(1200)
+      },
+      animateSliderWidth () {
+        setTimeout(() => {
+          this.sliderWidth = '20%'
+        })
+        setTimeout(() => {
+          this.sliderWidth = '50%'
+        }, 300)
       }
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
   .tabs{
     height: 100%;
     width: 100%;
-    /*display: flex;*/
   }
 
   .tabs-header{
     display: flex;
-    flex-direction: row;
-  }
-
-  .button{
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    position: relative;
-    text-align: center;
-    width: 50%;
-    height: 48px;
-    background-color: #f0f0f0;
-  }
-
-  .button:hover {
-    cursor: pointer;
-  }
-
-  .slider{
-    width: 270px;
-    height: 4px;
-    background-color: #da1e58;
-    position: absolute;
-    bottom: 0;
+    flex-direction: column;
+    width: 100%;
+    .buttons-container {
+      display: flex;
+      .button{
+        text-align: center;
+        width: 50%;
+        height: 48px;
+        background-color: #f0f0f0;
+        .slider-mini {
+          width: 100%;
+          height: 4px;
+          position: relative;
+          background-color: gainsboro;
+          transition: background-color;
+          transition-duration: 0.3s;
+        }
+        &:hover {
+          cursor: pointer;
+          .slider-mini {
+            background-color: darkgrey;
+          }
+        }
+      }
+    }
+    .slider-container {
+      width: 100%;
+      position: relative;
+      .slider{
+        position: absolute;
+        top: 0;
+        height: 4px;
+        background-color: #da1e58;
+        transition: left .6s ease-out, width .3s ease-out;
+      }
+    }
   }
 
   .tab-content {
-    /*padding: 30px;*/
-    /*border: 1px solid #ccc;*/
     width: 100%;
     height: 492px;
     text-align: center;
     position: relative;
-    /*margin: 0 auto;*/
   }
 
   .tab-panel {
@@ -137,10 +167,45 @@
     background-color: #100f0f;
     border-radius: 4px;
     border: none;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    opacity: 0.5;
   }
 
   button:hover {
-    cursor: pointer;
+    opacity: 1;
+    transition: all .5s ease;
+  }
+
+  button:after {
+    content: "";
+    background: #ffffff;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+
+  button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+  button:active, button:focus {
+    outline: none;
+  }
+
+  button::-moz-focus-inner {
+    border: 0;
   }
 
   button#copy-css-button {
@@ -169,8 +234,6 @@
     text-align: left;
     line-height: 54px;
     padding-left: 24px;
-    /*position: absolute;*/
-    /*left: 24px;*/
   }
 
   .separator{
@@ -207,10 +270,12 @@
     color: #505050;
   }
 
-  /*span#npm{*/
-    /*width: 100px;*/
-    /*height: 21px;*/
-    /*!*right: 91px;*!*/
-  /*}*/
+  span#html {
+    opacity: 0.6;
+  }
+
+  span#npm {
+    opacity: 0.6;
+  }
 
 </style>

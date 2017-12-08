@@ -74,6 +74,9 @@
       font-weight: 600;
       text-align: center;
       color: #ff1d5e;
+      /*[v-cloak] {*/
+        /*display: none;*/
+      /*}*/
       /*transition : width ease .0s, height ease .0s;*/
     }
 
