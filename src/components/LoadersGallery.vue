@@ -192,27 +192,28 @@
 
 <script>
   import LoadersGalleryItem from './LoadersGalleryItem.vue'
-  import HollowDotsSpinner from './spinners/HollowDotsSpinner.vue'
-  import PixelSpinner from './spinners/PixelSpinner.vue'
-  import FlowerSpinner from './spinners/FlowerSpinner.vue'
-  import IntersectingCirclesSpinner from './spinners/IntersectingCirclesSpinner.vue'
-  import OrbitSpinner from './spinners/OrbitSpinner.vue'
-  import FingerprintSpinner from './spinners/FingerprintSpinner.vue'
-  import TrinityRingsSpinner from './spinners/TrinityRingsSpinner.vue'
-  import FulfillingSquareSpinner from './spinners/FulfillingSquareSpinner.vue'
-  import CirclesToRhombusesSpinner from './spinners/CirclesToRhombusesSpinner.vue'
-  import SemipolarSpinner from './spinners/SemipolarSpinner.vue'
-  import DiamondSpinner from './spinners/DiamondSpinner.vue'
-  import BreedingRhombusSpinner from './spinners/BreedingRhombusSpinner.vue'
-  import SwappingSquaresSpinner from './spinners/SwappingSquaresSpinner.vue'
-  import ScalingSquaresSpinner from './spinners/ScalingSquaresSpinner.vue'
-  import FulfillingBouncingCircleSpinner from './spinners/FulfillingBouncingCircleSpinner.vue'
-  import RadarSpinner from './spinners/RadarSpinner.vue'
-  import SelfBuildingSquareSpinner from './spinners/SelfBuildingSquareSpinner.vue'
-  import SpringSpinner from './spinners/SpringSpinner.vue'
-  import LoopingRhombusesSpinner from './spinners/LoopingRhombusesSpinner.vue'
-  import HalfCircleSpinner from './spinners/HalfCircleSpinner.vue'
-  import AtomSpinner from './spinners/AtomSpinner.vue'
+  import {
+    HollowDotsSpinner,
+    PixelSpinner,
+    FlowerSpinner,
+    IntersectingCirclesSpinner,
+    OrbitSpinner,
+    FingerprintSpinner,
+    TrinityRingsSpinner,
+    FulfillingSquareSpinner,
+    CirclesToRhombusesSpinner,
+    SemipolarSpinner,
+    BreedingRhombusSpinner,
+    SwappingSquaresSpinner,
+    ScalingSquaresSpinner,
+    FulfillingBouncingCircleSpinner,
+    RadarSpinner,
+    SelfBuildingSquareSpinner,
+    SpringSpinner,
+    LoopingRhombusesSpinner,
+    HalfCircleSpinner,
+    AtomSpinner
+  } from 'epic-spinners'
 
   export default {
     name: 'LoadersGallery',
@@ -229,7 +230,6 @@
       FulfillingSquareSpinner,
       CirclesToRhombusesSpinner,
       SemipolarSpinner,
-      DiamondSpinner,
       BreedingRhombusSpinner,
       SwappingSquaresSpinner,
       ScalingSquaresSpinner,
