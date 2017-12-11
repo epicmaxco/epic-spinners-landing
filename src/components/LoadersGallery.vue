@@ -2,7 +2,7 @@
   <div class="loaders-gallery">
     <!-- row one -->
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="FlowerSpinner">
         <flower-spinner
           :animation-duration="2500"
           :size="70"
@@ -11,7 +11,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="PixelSpinner">
         <pixel-spinner
           :animation-duration="2000"
           :size="70"
@@ -20,7 +20,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="HollowDotsSpinner">
         <hollow-dots-spinner
           :animation-duration="1000"
           :dot-size="15"
@@ -30,7 +30,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="IntersectingCirclesSpinner">
         <intersecting-circles-spinner
           :animation-duration="1200"
           :size="70"
@@ -39,7 +39,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="OrbitSpinner">
         <orbit-spinner
           :animation-duration="1200"
           :size="55"
@@ -49,7 +49,7 @@
     </div>
     <!-- row 2 -->
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="RadarSpinner">
         <radar-spinner
           :animation-duration="2000"
           :size="60"
@@ -58,7 +58,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="ScalingSquaresSpinner">
         <scaling-squares-spinner
           :animation-duration="1250"
           :size="65"
@@ -67,7 +67,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="HalfCircleSpinner">
         <half-circle-spinner
           :animation-duration="1000"
           :size="60"
@@ -76,7 +76,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="TrinityRingsSpinner">
         <trinity-rings-spinner
           :animation-duration="1500"
           :size="66"
@@ -85,7 +85,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="FulfillingSquareSpinner">
         <fulfilling-square-spinner
           :animation-duration="4000"
           :size="50"
@@ -95,7 +95,7 @@
     </div>
     <!-- row 3 -->
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="CirclesToRhombusesSpinner">
         <circles-to-rhombuses-spinner
           :animation-duration="1200"
           :circles-num="3"
@@ -105,7 +105,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="SemipolarSpinner">
         <semipolar-spinner
           :animation-duration="2000"
           :size="65"
@@ -114,7 +114,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="SelfBuildingSquareSpinner">
         <self-building-square-spinner
           :animation-duration="6000"
           :size="40"
@@ -123,7 +123,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="SwappingSquaresSpinner">
         <swapping-squares-spinner
           :animation-duration="1000"
           :size="65"
@@ -133,7 +133,7 @@
     </div>
 
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="FulfillingBouncingCircleSpinner">
         <fulfilling-bouncing-circle-spinner
           :animation-duration="4000"
           :size="60"
@@ -143,7 +143,7 @@
     </div>
     <!-- row 4 -->
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="FingerprintSpinner">
         <fingerprint-spinner
           :animation-duration="1500"
           :size="64"
@@ -152,7 +152,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="SpringSpinner">
         <spring-spinner
           :animation-duration="3000"
           :size="60"
@@ -161,7 +161,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="AtomSpinner">
         <atom-spinner
           :animation-duration="1000"
           :size="60"
@@ -170,7 +170,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="LoopingRhombusesSpinner">
         <looping-rhombuses-spinner
           :animation-duration="2500"
           :rhombus-size="15"
@@ -179,7 +179,7 @@
       </loaders-gallery-item>
     </div>
     <div class="gallery-item-container">
-      <loaders-gallery-item>
+      <loaders-gallery-item name="BreedingRhombusSpinner">
         <breeding-rhombus-spinner
           :animation-duration="2000"
           :size="65"

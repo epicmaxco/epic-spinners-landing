@@ -8,38 +8,40 @@
              @click="setCurrentIndex(index)">
           <span v-if="index === 1 && currentIndex === index">HTML & CSS</span>
           <span v-if="index === 1 && currentIndex !== index" id="html">HTML & CSS</span>
-          <span v-if="index === 2 && currentIndex === index">NPM & VUE.JS</span>
-          <span v-if="index === 2 && currentIndex !== index" id="npm" style="opacity: 0.6">NPM & VUE.JS</span>
+          <span v-if="index === 2 && currentIndex === index">VUE.JS</span>
+          <span v-if="index === 2 && currentIndex !== index" id="npm" style="opacity: 0.6">VUE.JS</span>
           <div class="slider-mini"
           v-if="currentIndex !== index">
           </div>
         </div>
       </div>
       <div class="slider-container">
-        <div class="slider" :style="sliderLeft + '; width: ' + sliderWidth"></div>
+        <div class="slider" :style="sliderLeft + '; width: 50%;'"></div>
       </div>
     </div>
     <div class="tab-content">
       <div class="tab-panel" v-show="currentIndex === 1">
         <div class="copy-html">
-          <button v-on:click="callToasted()" id="copy-html-button">Copy HTML</button>
+          <div class="scroll-container" v-text="html" ref="htmlContent"></div>
+          <button v-clipboard:copy="html" v-clipboard:success="callToasted" id="copy-html-button">Copy HTML</button>
         </div>
         <div class="paste-code">
-          Paste the following code into style.css</div>
+          Paste the following code into style.css
+        </div>
         <div class="copy-css">
-          css code
-          <button v-on:click="callToasted()" id="copy-css-button">Copy CSS</button>
+          <div class="scroll-container" v-text="css"></div>
+          <button v-clipboard:copy="css" v-clipboard:success="callToasted" id="copy-css-button">Copy CSS</button>
         </div>
       </div>
       <div class="tab-panel" v-show="currentIndex === 2">
         <div class="copy-npm">
-          npm code
-          <button v-on:click="callToasted()" id="copy-code-one">Copy code</button>
+          <div class="scroll-container" v-text="npm"></div>
+          <button v-clipboard:copy="npm" v-clipboard:success="callToasted" id="copy-code-one">Copy code</button>
         </div>
         <div class="separator"></div>
         <div class="copy-vue-js">
-          vue code
-          <button v-on:click="callToasted()" id="copy-code-two">Copy code</button>
+          <div class="scroll-container" v-text="vue"></div>
+          <button  v-clipboard:copy="vue" v-clipboard:success="callToasted" id="copy-code-two">Copy code</button>
         </div>
       </div>
     </div>
@@ -52,7 +54,11 @@
     props: {
       count: {
         default: 2
-      }
+      },
+      html: null,
+      css: null,
+      npm: null,
+      vue: null
     },
     data () {
       return {
@@ -70,7 +76,7 @@
         this.currentIndex = index
         this.animateSliderWidth()
       },
-      callToasted () {
+      callToasted (refName) {
         let myToast = this.$toasted.show('Copied!', {
           theme: 'primary',
           position: 'top-right'
@@ -131,7 +137,7 @@
         top: 0;
         height: 4px;
         background-color: #da1e58;
-        transition: left .6s ease-out, width .3s ease-out;
+        transition: left .3s ease-out;
       }
     }
   }
@@ -146,18 +152,27 @@
   .tab-panel {
     width: 100%;
     height: 492px;
+    .scroll-container {
+      white-space: pre-wrap;
+      text-align: left;
+      padding: 20px 24px;
+      color: #858585;
+      font-weight: 300;
+    }
   }
 
   .copy-html{
     width: 100%;
-    height: 59px;
+    height: calc(50% - 34px);
     position: relative;
+    overflow: hidden;
+    overflow-y: auto;
   }
 
   button {
     position: absolute;
     right: 24px;
-    top: 16px;
+    top: 18px;
     width: 90px;
     height: 26px;
     font-size: 11px;
@@ -245,7 +260,9 @@
   .copy-css{
     position: relative;
     width: auto;
-    height: 379px;
+    height: calc(50% - 22px);
+    overflow: hidden;
+    overflow-y: auto;
   }
 
   .copy-npm {

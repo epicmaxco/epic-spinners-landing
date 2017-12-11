@@ -2,7 +2,7 @@
   <div class="loader-item-container">
     <div class="loaders-gallery-item" @click="this.open">
       <div class="spinner"><slot></slot></div>
-      <modal v-show="showModal" @close="this.close"></modal>
+      <modal v-show="showModal" @close="this.close" :spinnerName="name"></modal>
       <span class="tap-to-view-code">Tap to view code</span>
     </div>
   </div>
@@ -13,6 +13,7 @@
   import Modal from './ModalVue'
   export default {
     name: 'LoadersGalleryItem',
+    props: [ 'name' ],
     data () {
       return {
         showModal: false
@@ -67,13 +68,15 @@
       position: absolute;
       /*bottom: 12px;*/
       bottom: 0;
-      display: none;
+      /*display: none;*/
       width: auto;
       height: 20%;
-      font-size: 16px;
+      font-size: 4px;
       font-weight: 600;
       text-align: center;
       color: #ff1d5e;
+      opacity: 0;
+      transition: font-size $duration;
       /*[v-cloak] {*/
         /*display: none;*/
       /*}*/
@@ -89,8 +92,9 @@
       //transition : width ease .0s, height ease .0s;
       .tap-to-view-code {
         font-size: 16px;
-        display: block;
+        opacity: 1;
+        /*display: block;*/
       }
-      }
+    }
   }
 </style>

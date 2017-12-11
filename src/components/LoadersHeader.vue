@@ -35,6 +35,7 @@
 <style  lang="scss">
 @import "../sass/variables";
 .loaders-header {
+  padding-top: 20px;
   .title {
     font-size: $font-size-xxl;
   }

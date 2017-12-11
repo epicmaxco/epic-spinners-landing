@@ -47,6 +47,9 @@
       @include flexbox;
       .left-part {
         width: 50%;
+        @include flexbox;
+        flex-direction: column;
+        justify-content: center;
         .vuestic-text {
           font-size: $font-size-xl;
           font-weight: bold;

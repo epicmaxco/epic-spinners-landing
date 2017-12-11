@@ -2,7 +2,7 @@
     <transition name="modal">
         <div class="modal-mask" @click="close" v-show="show">
             <div class="modal-container" @click.stop>
-                <Tabs>
+                <Tabs :html="html" :css="css" :npm="npm" :vue="vue">
                 </Tabs>
             </div>
         </div>
@@ -13,7 +13,15 @@
   import Tabs from '../components/Tab'
   export default {
     name: 'modal',
-    props: ['show'],
+    props: ['show', 'spinnerName'],
+    data () {
+      return {
+        css: null,
+        html: null,
+        vue: null,
+        npm: null
+      }
+    },
     methods: {
       close: function (event) {
         event.stopPropagation()
@@ -22,6 +30,26 @@
     },
     components: {
       Tabs
+    },
+    mounted () {
+      console.log(this.spinnerName)
+      fetch('/static/examples/html/' + this.spinnerName + '.html')
+        .then(r => r.text())
+        .then(t => {
+          const styleStartIndex = t.indexOf('<style>')
+          const styleEndIndex = t.indexOf('</style>')
+          this.css = t.substring(styleStartIndex + 7, styleEndIndex).trim()
+          const htmlStartIndex = t.indexOf('<body>')
+          const htmlEndIndex = t.indexOf('</body>')
+          this.html = t.substring(htmlStartIndex + 6, htmlEndIndex).trim()
+        })
+      fetch('/static/examples/vue/' + this.spinnerName + '.vue')
+        .then(r => r.text())
+        .then(t => {
+          const componentEndIndex = t.indexOf('import')
+          this.vue = t.substring(0, componentEndIndex).trim()
+          this.npm = t.substring(componentEndIndex, t.length).trim()
+        })
     }
   }
 </script>
