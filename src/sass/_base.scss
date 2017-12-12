@@ -11,7 +11,6 @@ body {
 
 .github-button {
   background-color: $brand-main-color-black;
-  width: 160px;
   height: 36px;
   border-radius: 4px;
   font-weight: 600;
@@ -19,6 +18,8 @@ body {
   text-decoration: none !important;
   @include flexbox;
   @include align-items(center);
+  @include justify-content(space-between);
+  padding: 0 15px;
   box-shadow: 0 4px 12px 0 rgba(54, 193, 255, 0.1), 0 4px 12px 0 rgba(54, 193, 255, 0.1);
   transition: box-shadow 0.3s ease-in-out;
   &:hover {

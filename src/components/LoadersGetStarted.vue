@@ -172,6 +172,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
+  @import "../sass/variables";
+  
   .loaders-get-started {
     margin-top: 85px;
     .section-title {
@@ -200,8 +202,16 @@
       color: #a5a5a5;
     }
     .code {
+      overflow: hidden;
       padding: 20px;
       background-color: rgba(81, 79, 92, 0.2);
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    .loaders-get-started {
+      .section {
+        width: 85%;
+      }
     }
   }
 </style>

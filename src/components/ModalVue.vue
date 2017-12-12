@@ -54,7 +54,9 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  @import "../sass/variables";
+
   * {
     box-sizing: border-box;
   }
@@ -99,6 +101,10 @@
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
   }
-
+  @media (max-width: $screen-xs-max) {
+    .modal-container {
+      width: 365px;
+    }
+  }
 
 </style>

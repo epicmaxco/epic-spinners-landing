@@ -52,13 +52,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    $duration: .3s;
+    justify-content: center;
+    $duration: 0.3s;
     transition : width ease $duration, height ease $duration;
 
     .spinner {
       align-self: center;
-      width: 100%;
-      height: 100%;
+      width: 100px;
+      height: 100px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -94,6 +95,10 @@
         font-size: 16px;
         opacity: 1;
         /*display: block;*/
+      }
+      .spinner {
+        width: 160px;
+        height: 160px;
       }
     }
   }

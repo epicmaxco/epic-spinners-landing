@@ -67,8 +67,6 @@
           @include flexbox;
           @include align-items(center);
           .github-button {
-            width: 185px;
-            padding: 0 11px 0 8px;
             margin-right: 24px;
           }
         }

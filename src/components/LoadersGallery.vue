@@ -259,6 +259,7 @@
   }
 
   .gallery-item-container {
+    margin: auto;
     width: 190px;
     height: 190px;
     overflow: visible;

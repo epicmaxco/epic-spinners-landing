@@ -2,7 +2,7 @@
   <div class="loaders-header">
     <div class="top-line align-items-center">
       <div class="text-left ">
-        <a href="https://github.com" target="_blank" class="github-button flex">
+        <a href="https://github.com/epicmaxco/epic-spinners" target="_blank" class="github-button flex">
           <i class="fa fa-github" aria-hidden="true"></i>Fork on GitHub
         </a>
       </div>
@@ -36,16 +36,13 @@
 @import "../sass/variables";
 .loaders-header {
   padding-top: 20px;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
   .title {
     font-size: $font-size-xxl;
   }
   .sub-line {
     color: $text-color-dark;
     font-size: $font-size-xl;
-  }
-  .github-button {
-    padding: 0 8px;
   }
   .top-line {
     @include flexbox;
@@ -54,8 +51,26 @@
       @include flexbox;
       min-width: 140px;
 
-      a:first-child {
-        margin-right: 16px;
+      /*a:first-child {*/
+        /*margin-right: 16px;*/
+      /*}*/
+    }
+  }
+}
+@media (max-width: $screen-xs-max) {
+  .loaders-header {
+    .top-line {
+      flex-direction: column;
+      .title {
+        margin: 10px 0;
+      }
+      .links-wrapper {
+        display: block;
+        text-align: center;
+        margin: 0 0 10px;
+        .main-link {
+          margin: 0;
+        }
       }
     }
   }

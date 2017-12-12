@@ -15,6 +15,9 @@ $font-size-sm: 14px;
 $footer-main-height: 233px;
 $footer-secondary-height: 100px;
 
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+
 @mixin flexbox {
   display: -webkit-box;
   display: -webkit-flex;

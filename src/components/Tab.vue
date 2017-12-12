@@ -23,24 +23,32 @@
       <div class="tab-panel" v-show="currentIndex === 1">
         <div class="copy-html">
           <div class="scroll-container" v-text="html"></div>
-          <button v-clipboard:copy="html" v-clipboard:success="callToasted" id="copy-html-button">Copy HTML</button>
+          <button v-clipboard:copy="html" @click="setCopied('html')" v-bind:class="{'copied': checkCopied('html')}" id="copy-html-button">
+            {{checkCopied('html') ? 'Copied!' : 'Copy HTML'}}
+          </button>
         </div>
         <div class="separator"></div>
 
         <div class="copy-css">
           <div class="scroll-container" v-text="css"></div>
-          <button v-clipboard:copy="css" v-clipboard:success="callToasted" id="copy-css-button">Copy CSS</button>
+          <button v-clipboard:copy="css" @click="setCopied('css')"  v-bind:class="{'copied': checkCopied('css')}" id="copy-css-button">
+            {{checkCopied('css') ? 'Copied!' : 'Copy CSS'}}
+          </button>
         </div>
       </div>
       <div class="tab-panel" v-show="currentIndex === 2">
         <div class="copy-npm">
           <div class="scroll-container" v-text="npm"></div>
-          <button v-clipboard:copy="npm" v-clipboard:success="callToasted" id="copy-code-one">Copy code</button>
+          <button v-clipboard:copy="npm" @click="setCopied('code-one')" v-bind:class="{'copied': checkCopied('code-one')}" id="copy-code-one">
+            {{checkCopied('code-one') ? 'Copied!' : 'Copy code'}}
+          </button>
         </div>
         <div class="separator"></div>
         <div class="copy-vue-js">
           <div class="scroll-container" v-text="vue"></div>
-          <button  v-clipboard:copy="vue" v-clipboard:success="callToasted" id="copy-code-two">Copy code</button>
+          <button  v-clipboard:copy="vue" @click="setCopied('code-two')" v-bind:class="{'copied': checkCopied('code-two')}" id="copy-code-two">
+            {{checkCopied('code-two') ? 'Copied!' : 'Copy code'}}
+          </button>
         </div>
       </div>
     </div>
@@ -61,6 +69,7 @@
     },
     data () {
       return {
+        copied: '',
         currentIndex: 1,
         sliderWidth: '50%'
       }
@@ -71,11 +80,18 @@
       }
     },
     methods: {
+      checkCopied (prop) {
+        return this.copied === prop
+      },
+      setCopied (prop) {
+        this.copied = prop
+      },
       setCurrentIndex (index) {
         this.currentIndex = index
         this.animateSliderWidth()
       },
       callToasted (refName) {
+        console.log(refName)
         let myToast = this.$toasted.show('Copied!', {
           theme: 'primary',
           position: 'top-right'
@@ -150,7 +166,8 @@
 
   .tab-panel {
     width: 100%;
-    height: 492px;
+    margin-top: 4px;
+    height: 488px;
     .scroll-container {
       white-space: pre-wrap;
       text-align: left;
@@ -187,31 +204,15 @@
     text-decoration: none;
     overflow: hidden;
     opacity: 0.5;
+    &.copied {
+      background-color: #75ffb5;
+      color: #000;
+    }
   }
 
   button:hover {
     opacity: 1;
     transition: all .5s ease;
-  }
-
-  button:after {
-    content: "";
-    background: #ffffff;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px!important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
-  }
-
-  button:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
   }
 
   button:active, button:focus {
@@ -251,7 +252,7 @@
   }
 
   .separator{
-    width: 540px;
+    width: 100%;
     height: 2px;
     margin-top: -2px;
     background-color: #f0f0f0;
