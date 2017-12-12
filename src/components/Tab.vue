@@ -22,12 +22,11 @@
     <div class="tab-content">
       <div class="tab-panel" v-show="currentIndex === 1">
         <div class="copy-html">
-          <div class="scroll-container" v-text="html" ref="htmlContent"></div>
+          <div class="scroll-container" v-text="html"></div>
           <button v-clipboard:copy="html" v-clipboard:success="callToasted" id="copy-html-button">Copy HTML</button>
         </div>
-        <div class="paste-code">
-          Paste the following code into style.css
-        </div>
+        <div class="separator"></div>
+
         <div class="copy-css">
           <div class="scroll-container" v-text="css"></div>
           <button v-clipboard:copy="css" v-clipboard:success="callToasted" id="copy-css-button">Copy CSS</button>
@@ -163,7 +162,7 @@
 
   .copy-html{
     width: 100%;
-    height: calc(50% - 34px);
+    height: 50%;
     position: relative;
     overflow: hidden;
     overflow-y: auto;
@@ -254,13 +253,14 @@
   .separator{
     width: 540px;
     height: 2px;
+    margin-top: -2px;
     background-color: #f0f0f0;
   }
 
   .copy-css{
     position: relative;
     width: auto;
-    height: calc(50% - 22px);
+    height: 50%;
     overflow: hidden;
     overflow-y: auto;
   }
