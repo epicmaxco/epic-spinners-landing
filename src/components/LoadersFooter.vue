@@ -2,18 +2,20 @@
   <div class="loaders-footer">
     <div class="top-line">
       <div class="container vuestic-container">
-        <div class="left-part">
-          <div class="vuestic-text">Epic Spinners perfectly fit Vuestic Admin Theme.</div>
-          <div class="links-wrapper">
-            <a href="https://github.com/epicmaxco/vuestic-admin" target="_blank" class="github-button flex">
-              <i class="fa fa-github" aria-hidden="true"></i>Vuestic on GitHub
-            </a>
-            <a href="http://epicmax.co/vuestic" target="_blank" class="main-link">About Vuestic</a>
+        <div class="row vuestic-row">
+          <div class="left-part col-sm-12 col-lg-6">
+            <div class="vuestic-text">Epic Spinners perfectly fit Vuestic Admin Theme.</div>
+            <div class="links-wrapper">
+              <a href="https://github.com/epicmaxco/vuestic-admin" target="_blank" class="github-button flex">
+                <i class="fa fa-github" aria-hidden="true"></i>Vuestic on GitHub
+              </a>
+              <a href="http://epicmax.co/vuestic" target="_blank" class="main-link">About Vuestic</a>
+            </div>
           </div>
-        </div>
-        <div class="right-part">
-          <img class="vuestic-login" src="../assets/img/vuestic-login.png" alt="">
-          <img class="vuestic-main" src="../assets/img/vuestic-main.png" alt="">
+          <div class="right-part d-none d-lg-block col-lg-6">
+            <img class="vuestic-login" src="../assets/img/vuestic-login.png" alt="">
+            <img class="vuestic-main" src="../assets/img/vuestic-main.png" alt="">
+          </div>
         </div>
       </div>
     </div>
@@ -45,11 +47,13 @@
   .top-line {
     background-color: $brand-main-color-dark;
     height: $footer-main-height;
+    .vuestic-row {
+      width: 100%;
+    }
     .container.vuestic-container {
       height: 100%;
       @include flexbox;
       .left-part {
-        width: 50%;
         @include flexbox;
         flex-direction: column;
         justify-content: center;
@@ -70,14 +74,12 @@
         }
       }
       .right-part {
-        width: 50%;
         position: relative;
         img {
           position: absolute;
           &.vuestic-login {
             z-index: 11;
             height: 245px;
-            left: -110px;
             bottom: -75px;
           }
           &.vuestic-main {
