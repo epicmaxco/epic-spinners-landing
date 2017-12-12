@@ -1,14 +1,14 @@
 <template>
   <div class="loaders-footer">
     <div class="top-line">
-      <div class="container">
+      <div class="container vuestic-container">
         <div class="left-part">
           <div class="vuestic-text">Epic Spinners perfectly fit Vuestic Admin Theme.</div>
           <div class="links-wrapper">
-            <a href="https://github.com" target="_blank" class="github-button flex">
+            <a href="https://github.com/epicmaxco/vuestic-admin" target="_blank" class="github-button flex">
               <i class="fa fa-github" aria-hidden="true"></i>Vuestic on GitHub
             </a>
-            <a href="" class="main-link">About Vuestic</a>
+            <a href="http://epicmax.co/vuestic" target="_blank" class="main-link">About Vuestic</a>
           </div>
         </div>
         <div class="right-part">
@@ -38,11 +38,14 @@
 @import "../sass/variables";
 
 .loaders-footer {
-  margin-top: 60px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
   .top-line {
     background-color: $brand-main-color-dark;
     height: $footer-main-height;
-    .container {
+    .container.vuestic-container {
       height: 100%;
       @include flexbox;
       .left-part {
@@ -53,13 +56,15 @@
         .vuestic-text {
           font-size: $font-size-xl;
           font-weight: bold;
+          margin-bottom: 15px;
           padding-right: 60px;
         }
         .links-wrapper {
           @include flexbox;
           @include align-items(center);
           .github-button {
-            width: 174px;
+            width: 200px;
+            padding: 0 11px 0 8px;
             margin-right: 24px;
           }
         }
