@@ -10,8 +10,8 @@
       <div class="text-center title">Epic Spinners</div>
       <div class="text-right">
         <div class="links-wrapper">
-          <router-link class="main-link" to="/">Gallery</router-link>
-          <router-link class="main-link" to="get-started">Get Started</router-link>
+          <router-link class="main-link" v-if="$route.name === 'GetStarted'" to="/">Gallery</router-link>
+          <router-link class="main-link" v-if="$route.name === 'Gallery'" to="get-started">Get Started</router-link>
         </div>
       </div>
     </div>
