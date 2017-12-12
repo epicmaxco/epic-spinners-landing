@@ -43,6 +43,9 @@
     color: $text-color-dark;
     font-size: $font-size-xl;
   }
+  .github-button {
+    padding: 0 8px;
+  }
   .top-line {
     @include flexbox;
     @include justify-content(space-between);

@@ -11,7 +11,7 @@ body {
 
 .github-button {
   background-color: $brand-main-color-black;
-  width: 154px;
+  width: 160px;
   height: 36px;
   border-radius: 4px;
   font-weight: 600;
@@ -30,7 +30,7 @@ body {
   }
   i {
     font-size: $font-size-xl;
-    margin: 0 8px;
+    margin-right: 8px;
   }
 }
 a.main-link {
