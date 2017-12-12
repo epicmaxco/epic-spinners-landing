@@ -4,7 +4,7 @@
       <div class="container vuestic-container">
         <div class="row vuestic-row">
           <div class="left-part col-sm-12 col-lg-6">
-            <div class="vuestic-text">Epic Spinners perfectly fit Vuestic Admin Theme.</div>
+            <div class="vuestic-text">Epic Spinners perfectly fit <br/> Vuestic Admin Theme.</div>
             <div class="links-wrapper">
               <a href="https://github.com/epicmaxco/vuestic-admin" target="_blank" class="github-button flex">
                 <i class="fa fa-github" aria-hidden="true"></i>Vuestic on GitHub
