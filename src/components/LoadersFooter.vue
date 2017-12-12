@@ -20,7 +20,7 @@
     <div class="sub-line">
       <div class="container">
         <div class="left-part">
-          ©2017. Developed by <a href="" class="main-link">Epicmax. </a> Designed by <a href="" class="main-link">Vasili Savitski.</a>
+          ©2017. Developed by <a href="http://epicmax.co" target="_blank" class="main-link">Epicmax. </a> Designed by <a href="https://xxsavitski.myportfolio.com" target="_blank" class="main-link">Vasili Savitski.</a>
         </div>
         <div class="right-part"></div>
       </div>
