@@ -4,4 +4,4 @@
   color="#ff1d5e"
 />
 
-import { FulfillingSquareSpinner } from 'epic-spinners'
+import { FulfillingBouncingCircleSpinner } from 'epic-spinners'
