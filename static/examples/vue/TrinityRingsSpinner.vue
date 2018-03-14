@@ -4,4 +4,4 @@
   color="#ff1d5e"
 />
 
-import { TrinityRingsSpinner  } from 'epic-spinners'
+import { TrinityRingsSpinner } from 'epic-spinners'

@@ -4,4 +4,4 @@
   color="#ff1d5e"
 />
 
-import { SpringSpinner  } from 'epic-spinners'
+import { SpringSpinner } from 'epic-spinners'
