@@ -56,6 +56,9 @@ Object.keys(proxyTable).forEach(function (context) {
   app.use(proxyMiddleware(options.filter || context, options))
 })
 
+// load the favicon
+app.use('/favicon.ico', express.static(__dirname + '/../favicon.ico'));
+
 // handle fallback for HTML5 history API
 app.use(require('connect-history-api-fallback')())
 
