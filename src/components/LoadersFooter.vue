@@ -9,7 +9,9 @@
               <a href="https://github.com/epicmaxco/vuestic-admin" target="_blank" class="github-button flex">
                 <i class="fa fa-github" aria-hidden="true"></i>Vuestic on GitHub
               </a>
-              <!--<a href="http://epicmax.co/vuestic" target="_blank" class="main-link">About Vuestic</a>-->
+              <a href="https://vuestic.epicmax.co" target="_blank" class="github-button flex">
+                <i class="fa fa-star" aria-hidden="true"></i>Vuestic Demo
+              </a>
             </div>
           </div>
           <div class="right-part d-none d-lg-block col-lg-6">
