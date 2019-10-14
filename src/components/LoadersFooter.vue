@@ -15,8 +15,7 @@
             </div>
           </div>
           <div class="right-part d-none d-lg-block col-lg-6">
-            <img class="vuestic-login" src="../assets/img/vuestic-login.png" alt="">
-            <img class="vuestic-main" src="../assets/img/vuestic-main.png" alt="">
+            <img class="vuestic-main" src="../assets/img/vuestic.png" alt="">
           </div>
         </div>
       </div>
