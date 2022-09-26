@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Trinity Rings Spinner</title>
   <style>
-
     .trinity-rings-spinner, .trinity-rings-spinner * {
       box-sizing: border-box;
     }
@@ -21,6 +20,7 @@
       overflow: hidden;
       box-sizing: border-box;
     }
+
     .trinity-rings-spinner .circle {
       position:absolute;
       display:block;
@@ -35,12 +35,14 @@
       animation : trinity-rings-spinner-circle1-animation 1.5s infinite linear;
       border-width: 3px;
     }
+
     .trinity-rings-spinner .circle:nth-child(2) {
       height: calc(60px * 0.65);
       width: calc(60px * 0.65);
       animation : trinity-rings-spinner-circle2-animation 1.5s infinite linear;
       border-width: 2px;
     }
+
     .trinity-rings-spinner .circle:nth-child(3) {
       height: calc(60px * 0.1);
       width: calc(60px * 0.1);
@@ -56,6 +58,7 @@
         transform: rotateZ(100deg) rotateY(360deg);
       }
     }
+
     @keyframes trinity-rings-spinner-circle2-animation{
       0% {
         transform: rotateZ(100deg) rotateX(0deg);
@@ -64,6 +67,7 @@
         transform: rotateZ(0deg) rotateX(360deg);
       }
     }
+
     @keyframes trinity-rings-spinner-circle3-animation{
       0% {
         transform: rotateZ(100deg) rotateX(-360deg);
@@ -72,7 +76,6 @@
         transform: rotateZ(-360deg) rotateX(360deg);
       }
     }
-
   </style>
 </head>
 <body>
