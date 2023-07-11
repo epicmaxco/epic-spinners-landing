@@ -14,7 +14,7 @@ Vue.use(Toasted)
 Vue.config.productionTip = false
 
 Vue.use(VueGtm, {
-  id: 'GTM-K7BSQHC',
+  id: 'G-LTWCCC0LDR',
   enabled: process.env.NODE_ENV === 'production',
   vueRouter: router
 })
